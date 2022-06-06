@@ -26,6 +26,10 @@ public class EditorController: NSViewController, STTextViewDelegate {
         textView.storage = storage
         textView.widthTracksTextView = true
         textView.highlightSelectedLine = true
+//        let lineAnnotation1 = STLineAnnotation(
+//            location: textView.textLayoutManager.location(textView.textLayoutManager.documentRange.location, offsetBy: 0)!
+//        )
+//        textView.addAnnotation(lineAnnotation1)
         textView.textFinder.isIncrementalSearchingEnabled = true
         textView.textFinder.incrementalSearchingShouldDimContentView = true
         
@@ -45,5 +49,26 @@ public class EditorController: NSViewController, STTextViewDelegate {
     
     public override func viewDidAppear() {
         self.view.window?.makeFirstResponder(self.view)
+    }
+    
+    public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {
+            
+            let decorationView = STAnnotationLabelView(
+                annotation: lineAnnotation,
+                label: { Label("Hello World", systemImage: "cross") }
+            )
+
+            // Position
+            
+            let segmentFrame = textView.textLayoutManager.textSelectionSegmentFrame(at: lineAnnotation.location, type: .standard)!
+            let annotationHeight = min(textLineFragment.typographicBounds.height, textView.font?.boundingRectForFont.height ?? 24)
+
+            decorationView.frame = CGRect(
+                x: segmentFrame.origin.x,
+                y: segmentFrame.origin.y + (segmentFrame.height - annotationHeight),
+                width: textView.bounds.width - segmentFrame.maxX,
+                height: annotationHeight
+            )
+            return decorationView
     }
 }
