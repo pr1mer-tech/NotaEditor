@@ -90,7 +90,7 @@ extension UniversalFont {
             return self
         }
         let descriptor = fontDescriptor.withSymbolicTraits(traits)
-        let size = self.pointSize ?? UniversalFont.systemFontSize
+        let size = self.pointSize 
         return UniversalFont(descriptor: descriptor, size: size) ?? self
     }
     
