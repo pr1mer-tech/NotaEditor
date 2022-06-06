@@ -8,9 +8,12 @@
 
 #if os(macOS)
 import AppKit
-
-public class EditorCore: NSTextView {
-
-    var storage: Storage = Storage()
+import STTextView
+public class EditorCore: STTextView {
+    var storage: Storage = Storage() {
+        didSet {
+            self.textContentStorage.textStorage = storage
+        }
+    }
 }
 #endif

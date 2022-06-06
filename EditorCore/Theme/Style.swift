@@ -11,8 +11,13 @@ import Foundation
 public struct Style {
     var regex: NSRegularExpression!
     public var attributes: [NSAttributedString.Key: Any] = [:]
-
-    public init(element: Element, attributes: [NSAttributedString.Key: Any]) {
+    
+    var element: Element? = nil
+    var hiddenOffset = 0
+    
+    public init(element: Element, hiddenOffset: Int = 0, attributes: [NSAttributedString.Key: Any]) {
+        self.element = element
+        self.hiddenOffset = hiddenOffset
         self.regex = element.toRegex()
         self.attributes = attributes
     }

@@ -126,7 +126,13 @@ public class Storage: NSTextStorage {
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
                 guard let match = match else { return }
-                backingStore.addAttributes(style.attributes, range: match.range(at: 0))
+                var range = match.range(at: 0)
+                if style.hiddenOffset != 0 {
+                    // Hide the first character of the range.
+                    backingStore.addAttribute(.font, value: UniversalFont.systemFont(ofSize: 0.1), range: NSRange(location: range.location, length: style.hiddenOffset))
+                    range = NSRange(location: range.location + style.hiddenOffset, length: range.length - style.hiddenOffset)
+                }
+                backingStore.addAttributes(style.attributes, range: range)
             })
         }
     }

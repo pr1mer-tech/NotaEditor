@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import EditorCore
 
 struct EditorView: NSViewControllerRepresentable {
     @Binding var text: String
@@ -40,7 +41,7 @@ struct EditorView: NSViewControllerRepresentable {
 
     func makeNSViewController(context: Context) -> EditorController {
         let vc = EditorController()
-        vc.textView.textStorage?.delegate = context.coordinator
+        vc.textView.textContentStorage.textStorage?.delegate = context.coordinator
         return vc
     }
     

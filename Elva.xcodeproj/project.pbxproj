@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6858DC52284D875F003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC51284D875F003A5269 /* STTextView */; };
+		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
+		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
 		68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A685EC28470BD800E792D4 /* ElvaApp.swift */; };
 		68A685EF28470BD800E792D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A685EE28470BD800E792D4 /* ContentView.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
@@ -36,7 +39,6 @@
 		68A6864628470CC600E792D4 /* one-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863428470CC600E792D4 /* one-dark.json */; };
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
 		68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorView.swift */; };
-		68A6864C28470F4400E792D4 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A6861528470C0900E792D4 /* EditorCore.framework in Frameworks */,
+				6858DC52284D875F003A5269 /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6858DC54284D8786003A5269 /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +142,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6858DC41284D8541003A5269 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		68A685E028470BD800E792D4 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +156,7 @@
 				68A6860128470C0800E792D4 /* EditorCore */,
 				68A6860F28470C0900E792D4 /* EditorCoreTests */,
 				68A685EA28470BD800E792D4 /* Products */,
+				6858DC41284D8541003A5269 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,14 +194,14 @@
 		68A6860128470C0800E792D4 /* EditorCore */ = {
 			isa = PBXGroup;
 			children = (
+				68A6864B28470F4400E792D4 /* EditorController.swift */,
+				68A6864D284741DE00E792D4 /* Theme */,
 				68A6860228470C0800E792D4 /* EditorCore.h */,
 				68A6861F28470CBC00E792D4 /* Element.swift */,
 				68A6862028470CBC00E792D4 /* Extensions.swift */,
 				68A6862328470CC600E792D4 /* EditorCore-iOS.swift */,
 				68A6862928470CC600E792D4 /* EditorCore-macOS.swift */,
 				68A6862628470CC600E792D4 /* Storage.swift */,
-				68A6862528470CC600E792D4 /* Style.swift */,
-				68A6862728470CC600E792D4 /* Theme.swift */,
 				68A6862A28470CC600E792D4 /* themes */,
 				68A6863528470CC600E792D4 /* UniversalTypes.swift */,
 				68A6860328470C0800E792D4 /* EditorCore.docc */,
@@ -226,9 +238,17 @@
 			isa = PBXGroup;
 			children = (
 				68A6864928470F1B00E792D4 /* EditorView.swift */,
-				68A6864B28470F4400E792D4 /* EditorController.swift */,
 			);
 			path = Editor;
+			sourceTree = "<group>";
+		};
+		68A6864D284741DE00E792D4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				68A6862528470CC600E792D4 /* Style.swift */,
+				68A6862728470CC600E792D4 /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +280,9 @@
 				68A6861428470C0900E792D4 /* PBXTargetDependency */,
 			);
 			name = Elva;
+			packageProductDependencies = (
+				6858DC51284D875F003A5269 /* STTextView */,
+			);
 			productName = Elva;
 			productReference = 68A685E928470BD800E792D4 /* Elva.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +301,9 @@
 			dependencies = (
 			);
 			name = EditorCore;
+			packageProductDependencies = (
+				6858DC53284D8786003A5269 /* STTextView */,
+			);
 			productName = EditorCore;
 			productReference = 68A6860028470C0800E792D4 /* EditorCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -333,6 +359,9 @@
 				Base,
 			);
 			mainGroup = 68A685E028470BD800E792D4;
+			packageReferences = (
+				6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */,
+			);
 			productRefGroup = 68A685EA28470BD800E792D4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -385,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A6864C28470F4400E792D4 /* EditorController.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */,
 				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,
 				68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */,
@@ -398,6 +426,7 @@
 			files = (
 				68A6862128470CBC00E792D4 /* Element.swift in Sources */,
 				68A6863C28470CC600E792D4 /* EditorCore-macOS.swift in Sources */,
+				6858DC55284D9D16003A5269 /* EditorController.swift in Sources */,
 				68A6863A28470CC600E792D4 /* Theme.swift in Sources */,
 				68A6863928470CC600E792D4 /* Storage.swift in Sources */,
 				68A6863828470CC600E792D4 /* Style.swift in Sources */,
@@ -571,9 +600,11 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.Elva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -599,9 +630,11 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.Elva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -627,10 +660,12 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.EditorCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -659,10 +694,12 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.EditorCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -743,6 +780,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6858DC51284D875F003A5269 /* STTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */;
+			productName = STTextView;
+		};
+		6858DC53284D8786003A5269 /* STTextView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */;
+			productName = STTextView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 68A685E128470BD800E792D4 /* Project object */;
 }
