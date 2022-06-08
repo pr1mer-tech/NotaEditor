@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38928508D85003D3272 /* CompletionProvider.swift */; };
 		6858DC52284D875F003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC51284D875F003A5269 /* STTextView */; };
 		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		684CF38928508D85003D3272 /* CompletionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionProvider.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A685EC28470BD800E792D4 /* ElvaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElvaApp.swift; sourceTree = "<group>"; };
 		68A685EE28470BD800E792D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		684CF38828508D2B003D3272 /* GPT-API */ = {
+			isa = PBXGroup;
+			children = (
+				684CF38928508D85003D3272 /* CompletionProvider.swift */,
+			);
+			path = "GPT-API";
+			sourceTree = "<group>";
+		};
 		6858DC41284D8541003A5269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,11 +204,12 @@
 		68A6860128470C0800E792D4 /* EditorCore */ = {
 			isa = PBXGroup;
 			children = (
-				68A6864B28470F4400E792D4 /* EditorController.swift */,
+				684CF38828508D2B003D3272 /* GPT-API */,
 				68A6864D284741DE00E792D4 /* Theme */,
 				68A6860228470C0800E792D4 /* EditorCore.h */,
 				68A6861F28470CBC00E792D4 /* Element.swift */,
 				68A6862028470CBC00E792D4 /* Extensions.swift */,
+				68A6864B28470F4400E792D4 /* EditorController.swift */,
 				68A6862328470CC600E792D4 /* EditorCore-iOS.swift */,
 				68A6862928470CC600E792D4 /* EditorCore-macOS.swift */,
 				68A6862628470CC600E792D4 /* Storage.swift */,
@@ -427,6 +438,7 @@
 				68A6862128470CBC00E792D4 /* Element.swift in Sources */,
 				68A6863C28470CC600E792D4 /* EditorCore-macOS.swift in Sources */,
 				6858DC55284D9D16003A5269 /* EditorController.swift in Sources */,
+				684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */,
 				68A6863A28470CC600E792D4 /* Theme.swift in Sources */,
 				68A6863928470CC600E792D4 /* Storage.swift in Sources */,
 				68A6863828470CC600E792D4 /* Style.swift in Sources */,

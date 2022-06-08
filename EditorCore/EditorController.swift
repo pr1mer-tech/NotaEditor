@@ -52,6 +52,14 @@ public class EditorController: NSViewController, STTextViewDelegate {
     }
     
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
+//        Task {
+//            do {
+//                let result = try await CompletionProvider().getModels()
+//                print(result)
+//            } catch {
+//                print(error)
+//            }
+//        }
         if replacementString == "z" {
             let attributed = NSMutableAttributedString(string: "Hello World! This is a completion, totally not powered by AI.", attributes: [
                 .foregroundColor: UniversalColor.lightGray
