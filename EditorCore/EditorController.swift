@@ -51,6 +51,15 @@ public class EditorController: NSViewController, STTextViewDelegate {
         self.view.window?.makeFirstResponder(self.view)
     }
     
+    public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
+        if replacementString == "z" {
+            let attributed = NSMutableAttributedString(string: "Hello World! This is a completion, totally not powered by AI.", attributes: [
+                .foregroundColor: UniversalColor.lightGray
+            ])
+            textView.insertText(attributed)
+        }
+    }
+    
     public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {
             
             let decorationView = STAnnotationLabelView(
