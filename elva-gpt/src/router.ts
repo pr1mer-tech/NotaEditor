@@ -9,8 +9,10 @@ export const handle = async (request: Request) => {
             'Authorization': `Bearer ${OPENAI_TOKEN}`
         }
     }
-    if (request.bodyUsed) {
+    try {
         options.body = await request.text();
+    } catch (e) {
+        console.error(e);
     }
     
     const response = await fetch(`https://api.openai.com/v1${path}`, options);

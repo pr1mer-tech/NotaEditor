@@ -51,21 +51,56 @@ public class EditorController: NSViewController, STTextViewDelegate {
         self.view.window?.makeFirstResponder(self.view)
     }
     
+    let completion = CompletionProvider()
+    var lastEdit = Date()
+    var preventAuto = false
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
-//        Task {
-//            do {
-//                let result = try await CompletionProvider().getModels()
-//                print(result)
-//            } catch {
-//                print(error)
-//            }
-//        }
-        if replacementString == "z" {
-            let attributed = NSMutableAttributedString(string: "Hello World! This is a completion, totally not powered by AI.", attributes: [
-                .foregroundColor: UniversalColor.lightGray
-            ])
-            textView.insertText(attributed)
+        lastEdit = Date()
+        // Check in 0.5 seconds if the user has stopped typing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            guard self.preventAuto == false else {
+                self.preventAuto.toggle()
+                return
+            }
+            if self.lastEdit.timeIntervalSinceNow < -1 {
+                // User has stopped typing
+                Task {
+                    do {
+                        // Get sentence at cursor
+                        let range = textView.nsRange(from: affectedCharRange)
+                        let cursor = range.location
+                        guard let attributedString = textView.textContentStorage.attributedString else { return }
+                        let string = attributedString.string
+                        let sentence = string.sentences.first(where: { (sentence) -> Bool in
+                            let range = (string as NSString).range(of: sentence)
+                            if range.location < cursor && range.location + range.length > cursor {
+                                return true
+                            }
+                            return false
+                        })
+                        
+                        guard sentence?.count ?? 0 > 5 else { return }
+
+                        let request = CompletionProvider.CompletionRequest(prompt: sentence!, user: UUID().uuidString)
+                        let result = try await self.completion.completion(for: request)
+                        
+                        guard let choice = result.choices.first else { return }
+                        let completion = choice.text
+                        
+                        let attributed = NSMutableAttributedString(string: completion, attributes: [
+                            .foregroundColor: UniversalColor.lightGray
+                        ])
+                        textView.insertText(attributed)
+                        self.preventAuto = true // Prevent second request!
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
         }
+        // if replacementString == "z" {
+             
+        // }
     }
     
     public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {

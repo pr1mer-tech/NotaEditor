@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38928508D85003D3272 /* CompletionProvider.swift */; };
+		684CF38C2851CFF0003D3272 /* CompletionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38B2851CFF0003D3272 /* CompletionRequest.swift */; };
+		684CF38F2851E05D003D3272 /* TextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38E2851E05D003D3272 /* TextRange.swift */; };
+		684CF3912851E703003D3272 /* Sentences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF3902851E703003D3272 /* Sentences.swift */; };
 		6858DC52284D875F003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC51284D875F003A5269 /* STTextView */; };
 		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
@@ -82,6 +85,9 @@
 
 /* Begin PBXFileReference section */
 		684CF38928508D85003D3272 /* CompletionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionProvider.swift; sourceTree = "<group>"; };
+		684CF38B2851CFF0003D3272 /* CompletionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRequest.swift; sourceTree = "<group>"; };
+		684CF38E2851E05D003D3272 /* TextRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRange.swift; sourceTree = "<group>"; };
+		684CF3902851E703003D3272 /* Sentences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentences.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A685EC28470BD800E792D4 /* ElvaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElvaApp.swift; sourceTree = "<group>"; };
 		68A685EE28470BD800E792D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,8 +154,18 @@
 			isa = PBXGroup;
 			children = (
 				684CF38928508D85003D3272 /* CompletionProvider.swift */,
+				684CF38B2851CFF0003D3272 /* CompletionRequest.swift */,
 			);
 			path = "GPT-API";
+			sourceTree = "<group>";
+		};
+		684CF38D2851E04F003D3272 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				684CF38E2851E05D003D3272 /* TextRange.swift */,
+				684CF3902851E703003D3272 /* Sentences.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		6858DC41284D8541003A5269 /* Frameworks */ = {
@@ -204,6 +220,7 @@
 		68A6860128470C0800E792D4 /* EditorCore */ = {
 			isa = PBXGroup;
 			children = (
+				684CF38D2851E04F003D3272 /* Utils */,
 				684CF38828508D2B003D3272 /* GPT-API */,
 				68A6864D284741DE00E792D4 /* Theme */,
 				68A6860228470C0800E792D4 /* EditorCore.h */,
@@ -440,12 +457,15 @@
 				6858DC55284D9D16003A5269 /* EditorController.swift in Sources */,
 				684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */,
 				68A6863A28470CC600E792D4 /* Theme.swift in Sources */,
+				684CF38C2851CFF0003D3272 /* CompletionRequest.swift in Sources */,
 				68A6863928470CC600E792D4 /* Storage.swift in Sources */,
 				68A6863828470CC600E792D4 /* Style.swift in Sources */,
 				68A6862228470CBC00E792D4 /* Extensions.swift in Sources */,
 				68A6860428470C0800E792D4 /* EditorCore.docc in Sources */,
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
+				684CF3912851E703003D3272 /* Sentences.swift in Sources */,
+				684CF38F2851E05D003D3272 /* TextRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
