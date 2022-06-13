@@ -109,8 +109,18 @@ public class Storage: NSTextStorage {
         if let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0)) {
             let indexRange = backingString.lineRange(for: nsRange)
             let extendedRange: NSRange = NSUnionRange(editedRange, backingString.nsRange(from: indexRange))
+            let isGPT = backingStore.attributedSubstring(from: editedRange).isGPTCompletion
             applyStyles(extendedRange)
+            
+            // If GPT Completion we make the color gray
+            if isGPT {
+                backingStore.addAttributes([
+                    .foregroundColor: NSColor.gray,
+                    .gptCompletion: true
+                ], range: editedRange)
+            }
         }
+        
         super.processEditing()
     }
 

@@ -80,17 +80,26 @@ public class EditorController: NSViewController, STTextViewDelegate {
                         })
                         
                         guard sentence?.count ?? 0 > 5 else { return }
-
-                        let request = CompletionProvider.CompletionRequest(prompt: sentence!, user: UUID().uuidString)
+                        
+                        let prompt = sentence!.trimmingCharacters(in: .whitespacesAndNewlines)
+                        let request = CompletionProvider.CompletionRequest(prompt: prompt, user: UUID().uuidString)
                         let result = try await self.completion.completion(for: request)
                         
                         guard let choice = result.choices.first else { return }
-                        let completion = choice.text
-                        
+                        var completion = choice.text
+                        // If sentence and completion both ends and start with a space, remove it
+                        if sentence!.last == " " && completion.first == " " {
+                            completion = String(completion.dropFirst())
+                        }
                         let attributed = NSMutableAttributedString(string: completion, attributes: [
-                            .foregroundColor: UniversalColor.lightGray
+                            .foregroundColor: UniversalColor.lightGray,
+                            .gptCompletion: true
                         ])
                         textView.insertText(attributed)
+                        
+                        let cursorLocation = textView.textContentStorage.location(affectedCharRange.location, offsetBy: 1) ?? affectedCharRange.location
+                        let cursorRange = NSTextRange(location: cursorLocation)
+                        textView.setSelectedRange(cursorRange, updateLayout: true)
                         self.preventAuto = true // Prevent second request!
                     } catch {
                         print(error)

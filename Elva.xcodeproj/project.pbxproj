@@ -43,6 +43,7 @@
 		68A6864628470CC600E792D4 /* one-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863428470CC600E792D4 /* one-dark.json */; };
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
 		68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorView.swift */; };
+		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		68A6863528470CC600E792D4 /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
 		68A6864928470F1B00E792D4 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
+		68D5EEB12856D966005372BD /* AttributedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				684CF38E2851E05D003D3272 /* TextRange.swift */,
 				684CF3902851E703003D3272 /* Sentences.swift */,
+				68D5EEB12856D966005372BD /* AttributedStringKeys.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				68A6860428470C0800E792D4 /* EditorCore.docc in Sources */,
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
+				68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */,
 				684CF3912851E703003D3272 /* Sentences.swift in Sources */,
 				684CF38F2851E05D003D3272 /* TextRange.swift in Sources */,
 			);

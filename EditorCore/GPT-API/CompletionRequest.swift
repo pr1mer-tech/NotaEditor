@@ -11,14 +11,14 @@ extension CompletionProvider {
     // MARK: - Completion Request
     
     struct CompletionRequest: Codable {
-        var model: String = "text-davinci-002"
+        var model: String = "text-curie-001"
         var prompt: String
         var max_tokens: Int = 64
         var temperature: Double = 0.29
         var top_p: Double = 1
         var presence_penalty: Double = 0
         var frequency_penalty: Double = 0
-        var stop = ["."]
+        var stop = [".", "\n"]
         var user: String
     }
     
