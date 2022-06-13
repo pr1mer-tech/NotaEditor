@@ -109,16 +109,7 @@ public class Storage: NSTextStorage {
         if let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0)) {
             let indexRange = backingString.lineRange(for: nsRange)
             let extendedRange: NSRange = NSUnionRange(editedRange, backingString.nsRange(from: indexRange))
-            let isGPT = backingStore.attributedSubstring(from: editedRange).isGPTCompletion
             applyStyles(extendedRange)
-            
-            // If GPT Completion we make the color gray
-            if isGPT {
-                backingStore.addAttributes([
-                    .foregroundColor: NSColor.gray,
-                    .gptCompletion: true
-                ], range: editedRange)
-            }
         }
         
         super.processEditing()
@@ -131,7 +122,15 @@ public class Storage: NSTextStorage {
         guard let theme = self.theme else { return }
 
         let backingString = backingStore.string
-        backingStore.setAttributes(theme.body.attributes, range: range)
+        backingStore.enumerateAttributes(in: range) { attributes, range, _ in
+            backingStore.setAttributes(theme.body.attributes, range: range)
+            if attributes.keys.contains(.gptCompletion) {
+                backingStore.addAttributes([
+                    .foregroundColor: NSColor.gray,
+                    .gptCompletion: true
+                ], range: range)
+            }
+        }
 
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
@@ -142,6 +141,7 @@ public class Storage: NSTextStorage {
                     backingStore.addAttribute(.font, value: UniversalFont.systemFont(ofSize: 0.1), range: NSRange(location: range.location, length: style.hiddenOffset))
                     range = NSRange(location: range.location + style.hiddenOffset, length: range.length - style.hiddenOffset)
                 }
+                
                 backingStore.addAttributes(style.attributes, range: range)
             })
         }

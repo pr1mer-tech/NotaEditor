@@ -53,15 +53,32 @@ public class EditorController: NSViewController, STTextViewDelegate {
     
     let completion = CompletionProvider()
     var lastEdit = Date()
-    var preventAuto = false
+
+    var gptEdited = false
+    
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
         lastEdit = Date()
-        // Check in 0.5 seconds if the user has stopped typing
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            guard self.preventAuto == false else {
-                self.preventAuto.toggle()
+        
+        let content = textView.attributedString()
+        if let gptRange = content.GPTCompletionRange {
+            guard gptEdited == false else {
+                gptEdited.toggle()
                 return
             }
+            // If the replacement string is the same as the beginning of the completion string, remove the duplicate beginning
+            if replacementString.count > 0 && replacementString == content.string[gptRange.location..<gptRange.location + replacementString.count] {
+                guard let replacementRange = textView.nsTextRange(from: NSRange(location: gptRange.location, length: replacementString.count)) else { return }
+                textView.replaceCharacters(in: replacementRange, with: "")
+            } else if replacementString.count > 0 {
+                guard let replacementRange = textView.nsTextRange(from: NSRange(location: gptRange.location, length: gptRange.length)) else { return }
+                textView.replaceCharacters(in: replacementRange, with: "") // Removing completion
+            }
+            
+            return
+        }
+        
+        // Check in 0.5 seconds if the user has stopped typing
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if self.lastEdit.timeIntervalSinceNow < -1 {
                 // User has stopped typing
                 Task {
@@ -95,21 +112,17 @@ public class EditorController: NSViewController, STTextViewDelegate {
                             .foregroundColor: UniversalColor.lightGray,
                             .gptCompletion: true
                         ])
+                        self.gptEdited = true
                         textView.insertText(attributed)
-                        
-                        let cursorLocation = textView.textContentStorage.location(affectedCharRange.location, offsetBy: 1) ?? affectedCharRange.location
+                        let cursorLocation = textView.textContentStorage.location(affectedCharRange.endLocation, offsetBy: 1) ?? affectedCharRange.endLocation
                         let cursorRange = NSTextRange(location: cursorLocation)
                         textView.setSelectedRange(cursorRange, updateLayout: true)
-                        self.preventAuto = true // Prevent second request!
                     } catch {
                         print(error)
                     }
                 }
             }
         }
-        // if replacementString == "z" {
-             
-        // }
     }
     
     public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {

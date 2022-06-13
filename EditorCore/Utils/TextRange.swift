@@ -15,4 +15,11 @@ extension STTextView {
         let length = textContentStorage.offset(from: textRange.location, to: textRange.endLocation)
         return NSRange(location: offset, length: length)
     }
+    
+    func nsTextRange(from range: NSRange) -> NSTextRange? {
+        guard let location = textContentStorage.location(textLayoutManager.documentRange.location, offsetBy: range.location) else { return nil }
+        let endLocation = textContentStorage.location(location, offsetBy: range.length)
+        
+        return NSTextRange(location: location, end: endLocation)
+    }
 }
