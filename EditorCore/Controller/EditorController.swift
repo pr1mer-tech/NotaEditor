@@ -26,10 +26,6 @@ public class EditorController: NSViewController, STTextViewDelegate {
         textView.storage = storage
         textView.widthTracksTextView = true
         textView.highlightSelectedLine = true
-//        let lineAnnotation1 = STLineAnnotation(
-//            location: textView.textLayoutManager.location(textView.textLayoutManager.documentRange.location, offsetBy: 0)!
-//        )
-//        textView.addAnnotation(lineAnnotation1)
         textView.textFinder.isIncrementalSearchingEnabled = true
         textView.textFinder.incrementalSearchingShouldDimContentView = true
         
@@ -42,7 +38,7 @@ public class EditorController: NSViewController, STTextViewDelegate {
 
         // Line numbers
         scrollView.verticalRulerView = STLineNumberRulerView(textView: textView, scrollView: scrollView)
-        scrollView.rulersVisible = true
+        scrollView.rulersVisible = false
         
         self.view = scrollView
     }
@@ -99,8 +95,15 @@ public class EditorController: NSViewController, STTextViewDelegate {
                         guard sentence?.count ?? 0 > 5 else { return }
                         
                         let prompt = sentence!.trimmingCharacters(in: .whitespacesAndNewlines)
-                        let request = CompletionProvider.CompletionRequest(prompt: prompt, user: UUID().uuidString)
+                        let request = CompletionRequest(prompt: prompt, user: UUID().uuidString)
+                        
+                        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStatisticsDelegate
+                        
+                        delegate?.startedCompletionActivity(with: request)
+                        
                         let result = try await self.completion.completion(for: request)
+                        
+                        delegate?.finishedCompletionActivity(with: result)
                         
                         guard let choice = result.choices.first else { return }
                         var completion = choice.text

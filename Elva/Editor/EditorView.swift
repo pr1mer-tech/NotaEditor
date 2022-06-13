@@ -10,12 +10,21 @@ import EditorCore
 
 struct EditorView: NSViewControllerRepresentable {
     @Binding var text: String
+    @EnvironmentObject var stats: Stats
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
     
-    class Coordinator: NSObject, NSTextStorageDelegate {
+    class Coordinator: NSObject, EditorStatisticsDelegate {
+        func startedCompletionActivity(with request: CompletionRequest) {
+            self.parent.stats.networkActivity = true
+        }
+        
+        func finishedCompletionActivity(with response: CompletionResponse) {
+            self.parent.stats.networkActivity = false
+        }
+        
         private var parent: EditorView
         var shouldUpdateText = true
         
@@ -36,6 +45,8 @@ struct EditorView: NSViewControllerRepresentable {
             
             let endIndex = parent.text.utf16.index(insertIndex, offsetBy: numberOfCharactersToDelete())
             self.parent.text.replaceSubrange(insertIndex..<endIndex, with: edited)
+            
+            self.parent.stats.wordCount = self.parent.text.numberOfWords
         }
     }
 
@@ -49,6 +60,7 @@ struct EditorView: NSViewControllerRepresentable {
         if text != nsViewController.textView.string {
             context.coordinator.shouldUpdateText = false
             nsViewController.textView.string = text
+            self.stats.wordCount = self.text.numberOfWords
             context.coordinator.shouldUpdateText = true
         }
     }

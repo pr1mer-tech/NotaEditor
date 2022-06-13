@@ -31,21 +31,16 @@
 		68A6863928470CC600E792D4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862628470CC600E792D4 /* Storage.swift */; };
 		68A6863A28470CC600E792D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862728470CC600E792D4 /* Theme.swift */; };
 		68A6863C28470CC600E792D4 /* EditorCore-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862928470CC600E792D4 /* EditorCore-macOS.swift */; };
-		68A6863D28470CC600E792D4 /* solarized-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6862B28470CC600E792D4 /* solarized-light.json */; };
-		68A6863E28470CC600E792D4 /* one-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6862C28470CC600E792D4 /* one-light.json */; };
-		68A6863F28470CC600E792D4 /* one-light-custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6862D28470CC600E792D4 /* one-light-custom.json */; };
-		68A6864028470CC600E792D4 /* base16-tomorrow-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6862E28470CC600E792D4 /* base16-tomorrow-dark.json */; };
-		68A6864128470CC600E792D4 /* base16-tomorrow-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6862F28470CC600E792D4 /* base16-tomorrow-light.json */; };
-		68A6864228470CC600E792D4 /* system-minimal.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863028470CC600E792D4 /* system-minimal.json */; };
-		68A6864328470CC600E792D4 /* blues-clues.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863128470CC600E792D4 /* blues-clues.json */; };
-		68A6864428470CC600E792D4 /* solarized-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863228470CC600E792D4 /* solarized-dark.json */; };
-		68A6864528470CC600E792D4 /* one-dark-custom.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863328470CC600E792D4 /* one-dark-custom.json */; };
-		68A6864628470CC600E792D4 /* one-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = 68A6863428470CC600E792D4 /* one-dark.json */; };
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
 		68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorView.swift */; };
 		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 		68D5EEB42856EB04005372BD /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB32856EB04005372BD /* Subscript.swift */; };
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
+		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
+		68EFA2502857376000F7B587 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* Stats.swift */; };
+		68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */; };
+		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
+		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,16 +104,6 @@
 		68A6862628470CC600E792D4 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		68A6862728470CC600E792D4 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		68A6862928470CC600E792D4 /* EditorCore-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorCore-macOS.swift"; sourceTree = "<group>"; };
-		68A6862B28470CC600E792D4 /* solarized-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "solarized-light.json"; sourceTree = "<group>"; };
-		68A6862C28470CC600E792D4 /* one-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-light.json"; sourceTree = "<group>"; };
-		68A6862D28470CC600E792D4 /* one-light-custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-light-custom.json"; sourceTree = "<group>"; };
-		68A6862E28470CC600E792D4 /* base16-tomorrow-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "base16-tomorrow-dark.json"; sourceTree = "<group>"; };
-		68A6862F28470CC600E792D4 /* base16-tomorrow-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "base16-tomorrow-light.json"; sourceTree = "<group>"; };
-		68A6863028470CC600E792D4 /* system-minimal.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "system-minimal.json"; sourceTree = "<group>"; };
-		68A6863128470CC600E792D4 /* blues-clues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "blues-clues.json"; sourceTree = "<group>"; };
-		68A6863228470CC600E792D4 /* solarized-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "solarized-dark.json"; sourceTree = "<group>"; };
-		68A6863328470CC600E792D4 /* one-dark-custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-dark-custom.json"; sourceTree = "<group>"; };
-		68A6863428470CC600E792D4 /* one-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-dark.json"; sourceTree = "<group>"; };
 		68A6863528470CC600E792D4 /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
 		68A6864928470F1B00E792D4 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
@@ -126,6 +111,11 @@
 		68D5EEB32856EB04005372BD /* Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
 		68EFA24928572D4300F7B587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
+		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
+		68EFA24F2857376000F7B587 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStatisticsDelegate.swift; sourceTree = "<group>"; };
+		68EFA25628573D2200F7B587 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		68EFA259285741F200F7B587 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +159,7 @@
 		684CF38D2851E04F003D3272 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				68A6863528470CC600E792D4 /* UniversalTypes.swift */,
 				684CF38E2851E05D003D3272 /* TextRange.swift */,
 				684CF3902851E703003D3272 /* Sentences.swift */,
 				68D5EEB12856D966005372BD /* AttributedStringKeys.swift */,
@@ -208,6 +199,8 @@
 		68A685EB28470BD800E792D4 /* Elva */ = {
 			isa = PBXGroup;
 			children = (
+				68EFA258285741E900F7B587 /* Utils */,
+				68EFA25528573D1700F7B587 /* Views */,
 				68EFA24928572D4300F7B587 /* Info.plist */,
 				68A6864828470F0E00E792D4 /* Editor */,
 				68A685EC28470BD800E792D4 /* ElvaApp.swift */,
@@ -231,18 +224,15 @@
 		68A6860128470C0800E792D4 /* EditorCore */ = {
 			isa = PBXGroup;
 			children = (
+				68EFA252285737E900F7B587 /* Controller */,
+				68EFA251285737E000F7B587 /* Data */,
 				684CF38D2851E04F003D3272 /* Utils */,
 				684CF38828508D2B003D3272 /* GPT-API */,
 				68A6864D284741DE00E792D4 /* Theme */,
 				68A6860228470C0800E792D4 /* EditorCore.h */,
-				68A6861F28470CBC00E792D4 /* Element.swift */,
 				68A6862028470CBC00E792D4 /* Extensions.swift */,
-				68A6864B28470F4400E792D4 /* EditorController.swift */,
 				68A6862328470CC600E792D4 /* EditorCore-iOS.swift */,
 				68A6862928470CC600E792D4 /* EditorCore-macOS.swift */,
-				68A6862628470CC600E792D4 /* Storage.swift */,
-				68A6862A28470CC600E792D4 /* themes */,
-				68A6863528470CC600E792D4 /* UniversalTypes.swift */,
 				68A6860328470C0800E792D4 /* EditorCore.docc */,
 			);
 			path = EditorCore;
@@ -256,27 +246,12 @@
 			path = EditorCoreTests;
 			sourceTree = "<group>";
 		};
-		68A6862A28470CC600E792D4 /* themes */ = {
-			isa = PBXGroup;
-			children = (
-				68A6862B28470CC600E792D4 /* solarized-light.json */,
-				68A6862C28470CC600E792D4 /* one-light.json */,
-				68A6862D28470CC600E792D4 /* one-light-custom.json */,
-				68A6862E28470CC600E792D4 /* base16-tomorrow-dark.json */,
-				68A6862F28470CC600E792D4 /* base16-tomorrow-light.json */,
-				68A6863028470CC600E792D4 /* system-minimal.json */,
-				68A6863128470CC600E792D4 /* blues-clues.json */,
-				68A6863228470CC600E792D4 /* solarized-dark.json */,
-				68A6863328470CC600E792D4 /* one-dark-custom.json */,
-				68A6863428470CC600E792D4 /* one-dark.json */,
-			);
-			path = themes;
-			sourceTree = "<group>";
-		};
 		68A6864828470F0E00E792D4 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				68EFA24E2857375600F7B587 /* Model */,
 				68A6864928470F1B00E792D4 /* EditorView.swift */,
+				68EFA24C2857372400F7B587 /* EditorUtilView.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -284,10 +259,52 @@
 		68A6864D284741DE00E792D4 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				68A6861F28470CBC00E792D4 /* Element.swift */,
 				68A6862528470CC600E792D4 /* Style.swift */,
 				68A6862728470CC600E792D4 /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		68EFA24E2857375600F7B587 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68EFA24F2857376000F7B587 /* Stats.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		68EFA251285737E000F7B587 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				68A6862628470CC600E792D4 /* Storage.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		68EFA252285737E900F7B587 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68A6864B28470F4400E792D4 /* EditorController.swift */,
+				68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		68EFA25528573D1700F7B587 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				68EFA25628573D2200F7B587 /* ProgressView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		68EFA258285741E900F7B587 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				68EFA259285741F200F7B587 /* WordCount.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,16 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A6864228470CC600E792D4 /* system-minimal.json in Resources */,
-				68A6864028470CC600E792D4 /* base16-tomorrow-dark.json in Resources */,
-				68A6863D28470CC600E792D4 /* solarized-light.json in Resources */,
-				68A6864528470CC600E792D4 /* one-dark-custom.json in Resources */,
-				68A6863F28470CC600E792D4 /* one-light-custom.json in Resources */,
-				68A6863E28470CC600E792D4 /* one-light.json in Resources */,
-				68A6864128470CC600E792D4 /* base16-tomorrow-light.json in Resources */,
-				68A6864328470CC600E792D4 /* blues-clues.json in Resources */,
-				68A6864628470CC600E792D4 /* one-dark.json in Resources */,
-				68A6864428470CC600E792D4 /* solarized-dark.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,10 +460,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
+				68EFA2502857376000F7B587 /* Stats.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */,
 				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,
+				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
 				68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
+				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +487,7 @@
 				68D5EEB42856EB04005372BD /* Subscript.swift in Sources */,
 				68A6860428470C0800E792D4 /* EditorCore.docc in Sources */,
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
+				68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
 				68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */,
 				684CF3912851E703003D3272 /* Sentences.swift in Sources */,

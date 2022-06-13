@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var document: MarkdownDocument
-    
+    @StateObject var stats = Stats()
     var body: some View {
-        EditorView(text: $document.content)
+        VStack(spacing: 0) {
+            EditorView(text: $document.content)
+            EditorUtilView()
+        }
+        .environmentObject(stats)
+        .frame(minWidth: 400, minHeight: 225)
     }
 }
 
