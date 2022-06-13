@@ -10,7 +10,7 @@ import STTextView
 
 public class EditorController: NSViewController, STTextViewDelegate {
     public var textView = EditorCore()
-    let storage = Storage()
+    public let storage = Storage()
     
     public override func loadView() {
         let theme = Theme.default

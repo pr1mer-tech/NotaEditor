@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text = ""
+    @Binding var document: MarkdownDocument
+    
     var body: some View {
-        EditorView(text: $text)
+        EditorView(text: $document.content)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(document: .constant(MarkdownDocument()))
     }
 }

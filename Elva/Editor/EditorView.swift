@@ -41,7 +41,7 @@ struct EditorView: NSViewControllerRepresentable {
 
     func makeNSViewController(context: Context) -> EditorController {
         let vc = EditorController()
-        vc.textView.textContentStorage.textStorage?.delegate = context.coordinator
+        vc.storage.delegate = context.coordinator
         return vc
     }
     
