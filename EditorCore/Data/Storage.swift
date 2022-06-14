@@ -126,7 +126,7 @@ public class Storage: NSTextStorage {
             backingStore.setAttributes(theme.body.attributes, range: range)
             if attributes.keys.contains(.gptCompletion) {
                 backingStore.addAttributes([
-                    .foregroundColor: NSColor.gray,
+                    .foregroundColor: UniversalColor.lightGray,
                     .gptCompletion: true
                 ], range: range)
             }

@@ -30,6 +30,9 @@ extension CompletionRequest {
             prompt = "..." + prompt.suffix(3500)
         }
 
+        // Make sure prompt doesn't end with a period
+        guard prompt.last != "." else { return nil }
+
         // Build request
         let deviceID = CompletionProvider.hardwareUUID() ?? "unknown"
         let request = CompletionRequest(prompt: prompt, user: deviceID)

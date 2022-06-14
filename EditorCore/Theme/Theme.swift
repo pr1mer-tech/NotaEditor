@@ -70,6 +70,7 @@ public struct Theme {
             ]),
             Style(element: .body, attributes: [
                 .font: UniversalFont.systemFont(ofSize: 17),
+                .foregroundColor: UniversalColor.labelColor,
                 .paragraphStyle: paragraphStyle(for: .body)
             ]),
             Style(element: .bold, attributes: [
