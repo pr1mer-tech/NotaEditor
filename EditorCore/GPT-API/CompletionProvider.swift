@@ -51,5 +51,14 @@ class CompletionProvider {
         let response = try await get(for: ModelsResponse.self, at: "models")
         return response.data
     }
+    
+    // MARK: - Security
+    static func hardwareUUID() -> String? {
+        let matchingDict = IOServiceMatching("IOPlatformExpertDevice")
+        let platformExpert = IOServiceGetMatchingService(kIOMainPortDefault, matchingDict)
+        defer{ IOObjectRelease(platformExpert) }
 
+        guard platformExpert != 0 else { return nil }
+        return IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString, kCFAllocatorDefault, 0).takeRetainedValue() as? String
+    }
 }

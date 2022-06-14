@@ -26,8 +26,8 @@ public class EditorController: NSViewController, STTextViewDelegate {
         textView.storage = storage
         textView.widthTracksTextView = true
         textView.highlightSelectedLine = true
-        textView.textFinder.isIncrementalSearchingEnabled = true
-        textView.textFinder.incrementalSearchingShouldDimContentView = true
+        textView.textFinder.isIncrementalSearchingEnabled = false
+//        textView.textFinder.incrementalSearchingShouldDimContentView = false
         
         // Storage
         textView.textContentStorage.automaticallySynchronizesToBackingStore = true
@@ -49,28 +49,13 @@ public class EditorController: NSViewController, STTextViewDelegate {
     
     let completion = CompletionProvider()
     var lastEdit = Date()
-
-    var gptEdited = false
     
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
         lastEdit = Date()
         
         let content = textView.attributedString()
         if let gptRange = content.GPTCompletionRange {
-            guard gptEdited == false else {
-                gptEdited.toggle()
-                return
-            }
-            // If the replacement string is the same as the beginning of the completion string, remove the duplicate beginning
-            if replacementString.count > 0 && replacementString == content.string[gptRange.location..<gptRange.location + replacementString.count] {
-                guard let replacementRange = textView.nsTextRange(from: NSRange(location: gptRange.location, length: replacementString.count)) else { return }
-                textView.replaceCharacters(in: replacementRange, with: "")
-            } else if replacementString.count > 0 {
-                guard let replacementRange = textView.nsTextRange(from: NSRange(location: gptRange.location, length: gptRange.length)) else { return }
-                textView.replaceCharacters(in: replacementRange, with: "") // Removing completion
-            }
-            
-            return
+            return processInputWithCompletion(textView, content: content, didChangeTextIn: affectedCharRange, withCompletionIn: gptRange, replacementString: replacementString)
         }
         
         // Check in 0.5 seconds if the user has stopped typing
@@ -79,47 +64,7 @@ public class EditorController: NSViewController, STTextViewDelegate {
                 // User has stopped typing
                 Task {
                     do {
-                        // Get sentence at cursor
-                        let range = textView.nsRange(from: affectedCharRange)
-                        let cursor = range.location
-                        guard let attributedString = textView.textContentStorage.attributedString else { return }
-                        let string = attributedString.string
-                        let sentence = string.sentences.first(where: { (sentence) -> Bool in
-                            let range = (string as NSString).range(of: sentence)
-                            if range.location < cursor && range.location + range.length > cursor {
-                                return true
-                            }
-                            return false
-                        })
-                        
-                        guard sentence?.count ?? 0 > 5 else { return }
-                        
-                        let prompt = sentence!.trimmingCharacters(in: .whitespacesAndNewlines)
-                        let request = CompletionRequest(prompt: prompt, user: UUID().uuidString)
-                        
-                        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStatisticsDelegate
-                        
-                        delegate?.startedCompletionActivity(with: request)
-                        
-                        let result = try await self.completion.completion(for: request)
-                        
-                        delegate?.finishedCompletionActivity(with: result)
-                        
-                        guard let choice = result.choices.first else { return }
-                        var completion = choice.text
-                        // If sentence and completion both ends and start with a space, remove it
-                        if sentence!.last == " " && completion.first == " " {
-                            completion = String(completion.dropFirst())
-                        }
-                        let attributed = NSMutableAttributedString(string: completion, attributes: [
-                            .foregroundColor: UniversalColor.lightGray,
-                            .gptCompletion: true
-                        ])
-                        self.gptEdited = true
-                        textView.insertText(attributed)
-                        let cursorLocation = textView.textContentStorage.location(affectedCharRange.endLocation, offsetBy: 1) ?? affectedCharRange.endLocation
-                        let cursorRange = NSTextRange(location: cursorLocation)
-                        textView.setSelectedRange(cursorRange, updateLayout: true)
+                        try await self.completeSentence(textView, didChangeTextIn: affectedCharRange, replacementString: replacementString)
                     } catch {
                         print(error)
                     }

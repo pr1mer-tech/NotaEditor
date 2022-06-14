@@ -35,6 +35,8 @@
 		68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorView.swift */; };
 		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 		68D5EEB42856EB04005372BD /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB32856EB04005372BD /* Subscript.swift */; };
+		68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D722858300A00B77770 /* CompletionHandling.swift */; };
+		68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D74285858B500B77770 /* RequestBuilder.swift */; };
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
 		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
 		68EFA2502857376000F7B587 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* Stats.swift */; };
@@ -109,6 +111,8 @@
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		68D5EEB12856D966005372BD /* AttributedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringKeys.swift; sourceTree = "<group>"; };
 		68D5EEB32856EB04005372BD /* Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
+		68E92D722858300A00B77770 /* CompletionHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandling.swift; sourceTree = "<group>"; };
+		68E92D74285858B500B77770 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		68EFA24928572D4300F7B587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				684CF38928508D85003D3272 /* CompletionProvider.swift */,
 				684CF38B2851CFF0003D3272 /* CompletionRequest.swift */,
+				68E92D74285858B500B77770 /* RequestBuilder.swift */,
 			);
 			path = "GPT-API";
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			children = (
 				68A6864B28470F4400E792D4 /* EditorController.swift */,
 				68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */,
+				68E92D722858300A00B77770 /* CompletionHandling.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,7 +495,9 @@
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
 				68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
+				68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */,
 				68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */,
+				68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */,
 				684CF3912851E703003D3272 /* Sentences.swift in Sources */,
 				684CF38F2851E05D003D3272 /* TextRange.swift in Sources */,
 			);

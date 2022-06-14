@@ -9,7 +9,7 @@ import Foundation
 
 
 public struct CompletionRequest: Codable {
-    var model: String = "text-curie-001"
+    var model: String = "text-babbage-001"
     var prompt: String
     var max_tokens: Int = 64
     var temperature: Double = 0.29
