@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
-
 @main
 struct ElvaApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: MarkdownDocument()) { file in
-            ContentView(document: file.$document)
+            ContentView(content: file.$document.content, manager: DocumentManager())
         }
     }
 }

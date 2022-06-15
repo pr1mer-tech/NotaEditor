@@ -32,17 +32,21 @@
 		68A6863A28470CC600E792D4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862728470CC600E792D4 /* Theme.swift */; };
 		68A6863C28470CC600E792D4 /* EditorCore-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862928470CC600E792D4 /* EditorCore-macOS.swift */; };
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
-		68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorView.swift */; };
+		68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorCoreView.swift */; };
 		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 		68D5EEB42856EB04005372BD /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB32856EB04005372BD /* Subscript.swift */; };
 		68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D722858300A00B77770 /* CompletionHandling.swift */; };
 		68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D74285858B500B77770 /* RequestBuilder.swift */; };
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
 		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
-		68EFA2502857376000F7B587 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* Stats.swift */; };
+		68EFA2502857376000F7B587 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* DocumentManager.swift */; };
 		68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */; };
 		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
 		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
+		68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0D9285987E100C59F8D /* EditorView.swift */; };
+		68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0DB28598A6300C59F8D /* SmartPane.swift */; };
+		68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */; };
+		68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0E02859B0D500C59F8D /* InfoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +111,7 @@
 		68A6862728470CC600E792D4 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		68A6862928470CC600E792D4 /* EditorCore-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorCore-macOS.swift"; sourceTree = "<group>"; };
 		68A6863528470CC600E792D4 /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
-		68A6864928470F1B00E792D4 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		68A6864928470F1B00E792D4 /* EditorCoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCoreView.swift; sourceTree = "<group>"; };
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		68D5EEB12856D966005372BD /* AttributedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringKeys.swift; sourceTree = "<group>"; };
 		68D5EEB32856EB04005372BD /* Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
@@ -116,10 +120,13 @@
 		68EFA24928572D4300F7B587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
-		68EFA24F2857376000F7B587 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		68EFA24F2857376000F7B587 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStatisticsDelegate.swift; sourceTree = "<group>"; };
 		68EFA25628573D2200F7B587 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		68EFA259285741F200F7B587 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
+		68FDE0D9285987E100C59F8D /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		68FDE0DB28598A6300C59F8D /* SmartPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPane.swift; sourceTree = "<group>"; };
+		68FDE0E02859B0D500C59F8D /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A6861528470C0900E792D4 /* EditorCore.framework in Frameworks */,
+				68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */,
 				6858DC52284D875F003A5269 /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +215,7 @@
 				68EFA258285741E900F7B587 /* Utils */,
 				68EFA25528573D1700F7B587 /* Views */,
 				68EFA24928572D4300F7B587 /* Info.plist */,
+				68FDE0D82859879900C59F8D /* SmartPane */,
 				68A6864828470F0E00E792D4 /* Editor */,
 				68A685EC28470BD800E792D4 /* ElvaApp.swift */,
 				68A685EE28470BD800E792D4 /* ContentView.swift */,
@@ -255,8 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				68EFA24E2857375600F7B587 /* Model */,
-				68A6864928470F1B00E792D4 /* EditorView.swift */,
+				68A6864928470F1B00E792D4 /* EditorCoreView.swift */,
 				68EFA24C2857372400F7B587 /* EditorUtilView.swift */,
+				68FDE0D9285987E100C59F8D /* EditorView.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -274,7 +284,7 @@
 		68EFA24E2857375600F7B587 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				68EFA24F2857376000F7B587 /* Stats.swift */,
+				68EFA24F2857376000F7B587 /* DocumentManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				68EFA25628573D2200F7B587 /* ProgressView.swift */,
+				68FDE0E02859B0D500C59F8D /* InfoRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +322,14 @@
 				68EFA259285741F200F7B587 /* WordCount.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		68FDE0D82859879900C59F8D /* SmartPane */ = {
+			isa = PBXGroup;
+			children = (
+				68FDE0DB28598A6300C59F8D /* SmartPane.swift */,
+			);
+			path = SmartPane;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +363,7 @@
 			name = Elva;
 			packageProductDependencies = (
 				6858DC51284D875F003A5269 /* STTextView */,
+				68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */,
 			);
 			productName = Elva;
 			productReference = 68A685E928470BD800E792D4 /* Elva.app */;
@@ -423,6 +443,7 @@
 			mainGroup = 68A685E028470BD800E792D4;
 			packageReferences = (
 				6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */,
+				68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */,
 			);
 			productRefGroup = 68A685EA28470BD800E792D4 /* Products */;
 			projectDirPath = "";
@@ -466,12 +487,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
-				68EFA2502857376000F7B587 /* Stats.swift in Sources */,
-				68A6864A28470F1B00E792D4 /* EditorView.swift in Sources */,
+				68EFA2502857376000F7B587 /* DocumentManager.swift in Sources */,
+				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
+				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
 				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
 				68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */,
+				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
 				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);
@@ -858,6 +882,14 @@
 				minimumVersion = 0.0.9;
 			};
 		};
+		68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arguiot/GPT-Tokenizer";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -870,6 +902,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */;
 			productName = STTextView;
+		};
+		68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */;
+			productName = "GPT-Tokenizer";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

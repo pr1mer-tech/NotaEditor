@@ -9,16 +9,29 @@ import SwiftUI
 
 struct EditorUtilView: View {
     
-    @EnvironmentObject var stats: Stats
+    @EnvironmentObject var manager: DocumentManager
+    
+    @State var showDetails = false
     
     var body: some View {
         HStack {
-            if stats.networkActivity {
+            if manager.networkActivity {
                 ProgressView("Thinking...")
                     .progressViewStyle(.horizontal)
             }
             Spacer()
-            Text("\(stats.wordCount) words")
+            Text("\(manager.wordCount) words")
+                .onTapGesture {
+                    showDetails.toggle()
+                }
+                .popover(isPresented: $showDetails, arrowEdge: .bottom) {
+                    List {
+                        Section("Counter") {
+                            InfoRow(label: "Words", value: manager.wordCount)
+                            InfoRow(label: "Tokens", value: manager.tokens)
+                        }
+                    }
+                }
         }
         .padding(.all, 5)
         .frame(height: 25)
