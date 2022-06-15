@@ -12,11 +12,10 @@ import GPT_Tokenizer
 class DocumentManager: ObservableObject {
     @Published var networkActivity = false
     
-    @Published var wordCount: Int = 0
-    
-    var tokens: Int = 0
+    @Published var tokens: Int = 0
     
     func process(content: String) {
-        self.wordCount = content.numberOfWords
+        let tokenizer = GPT_Tokenizer()
+        self.tokens = tokenizer.encode(text: content).count
     }
 }

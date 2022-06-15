@@ -22,8 +22,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
     class Coordinator: NSObject, EditorStorageDelegate {
         func startedCompletionActivity(with request: CompletionRequest) {
             self.parent.manager.networkActivity = true
-            let tokenizer = GPT_Tokenizer()
-            self.parent.manager.tokens = tokenizer.encode(text: self.parent.text).count
         }
         
         func finishedCompletionActivity(with response: CompletionResponse) {
@@ -50,8 +48,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
             
             let endIndex = parent.text.utf16.index(insertIndex, offsetBy: numberOfCharactersToDelete())
             self.parent.text.replaceSubrange(insertIndex..<endIndex, with: edited)
-            
-            self.parent.manager.process(content: self.parent.text)
         }
     }
 
@@ -65,7 +61,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
         if text != nsViewController.textView.string {
             context.coordinator.shouldUpdateText = false
             nsViewController.textView.string = text
-            self.manager.process(content: self.text)
             context.coordinator.shouldUpdateText = true
         }
     }

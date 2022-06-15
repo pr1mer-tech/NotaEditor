@@ -12,7 +12,7 @@ struct EditorView: View {
     var body: some View {
         VStack(spacing: 0) {
             EditorCoreView(text: $content)
-            EditorUtilView()
+            EditorUtilView(content: $content)
         }
     }
 }

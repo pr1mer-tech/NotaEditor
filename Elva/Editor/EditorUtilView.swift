@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditorUtilView: View {
+    @Binding var content: String
     
     @EnvironmentObject var manager: DocumentManager
     
@@ -20,14 +21,15 @@ struct EditorUtilView: View {
                     .progressViewStyle(.horizontal)
             }
             Spacer()
-            Text("\(manager.wordCount) words")
+            Text("\(content.numberOfWords) words")
                 .onTapGesture {
                     showDetails.toggle()
+                    self.manager.process(content: content)
                 }
-                .popover(isPresented: $showDetails, arrowEdge: .bottom) {
+                .popover(isPresented: $showDetails, arrowEdge: .top) {
                     List {
                         Section("Counter") {
-                            InfoRow(label: "Words", value: manager.wordCount)
+                            InfoRow(label: "Words", value: content.numberOfWords)
                             InfoRow(label: "Tokens", value: manager.tokens)
                         }
                     }
@@ -40,6 +42,6 @@ struct EditorUtilView: View {
 
 struct EditorUtilView_Previews: PreviewProvider {
     static var previews: some View {
-        EditorUtilView()
+        EditorUtilView(content: .constant(""))
     }
 }
