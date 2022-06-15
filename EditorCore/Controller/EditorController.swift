@@ -52,6 +52,7 @@ public class EditorController: NSViewController, STTextViewDelegate {
     
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
         lastEdit = Date()
+        guard (storage.delegate as? EditorStorageDelegate)?.shouldUpdateText ?? true else { return }
         
         let content = textView.attributedString()
         if let gptRange = content.GPTCompletionRange {

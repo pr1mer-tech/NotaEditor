@@ -32,7 +32,7 @@ extension EditorController {
         
         guard let request = CompletionRequest.buildRequest(for: sentences, stoppingAt: sentenceIndex) else { return }
         
-        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStatisticsDelegate
+        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStorageDelegate
         
         delegate?.startedCompletionActivity(with: request)
         

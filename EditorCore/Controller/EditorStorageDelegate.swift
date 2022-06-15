@@ -8,7 +8,8 @@
 import Foundation
 import AppKit
 
-public protocol EditorStatisticsDelegate: NSTextStorageDelegate {
+public protocol EditorStorageDelegate: NSTextStorageDelegate {
+    var shouldUpdateText: Bool { get set }
     func startedCompletionActivity(with request: CompletionRequest) -> Void
     func finishedCompletionActivity(with response: CompletionResponse) -> Void
 }

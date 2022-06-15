@@ -40,7 +40,7 @@
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
 		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
 		68EFA2502857376000F7B587 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* DocumentManager.swift */; };
-		68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */; };
+		68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */; };
 		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
 		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
 		68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0D9285987E100C59F8D /* EditorView.swift */; };
@@ -121,7 +121,7 @@
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
 		68EFA24F2857376000F7B587 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
-		68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStatisticsDelegate.swift; sourceTree = "<group>"; };
+		68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStorageDelegate.swift; sourceTree = "<group>"; };
 		68EFA25628573D2200F7B587 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		68EFA259285741F200F7B587 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
 		68FDE0D9285987E100C59F8D /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6864B28470F4400E792D4 /* EditorController.swift */,
-				68EFA2532857380900F7B587 /* EditorStatisticsDelegate.swift */,
+				68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */,
 				68E92D722858300A00B77770 /* CompletionHandling.swift */,
 			);
 			path = Controller;
@@ -517,7 +517,7 @@
 				68D5EEB42856EB04005372BD /* Subscript.swift in Sources */,
 				68A6860428470C0800E792D4 /* EditorCore.docc in Sources */,
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
-				68EFA2542857380900F7B587 /* EditorStatisticsDelegate.swift in Sources */,
+				68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
 				68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */,
 				68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */,

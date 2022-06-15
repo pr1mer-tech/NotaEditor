@@ -19,7 +19,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
         return Coordinator(self)
     }
     
-    class Coordinator: NSObject, EditorStatisticsDelegate {
+    class Coordinator: NSObject, EditorStorageDelegate {
         func startedCompletionActivity(with request: CompletionRequest) {
             self.parent.manager.networkActivity = true
             let tokenizer = GPT_Tokenizer()

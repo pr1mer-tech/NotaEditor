@@ -15,5 +15,14 @@ public class EditorCore: STTextView {
             self.textContentStorage.textStorage = storage
         }
     }
+    
+    public override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        
+        // Delete completion
+        guard let gptRange = attributedString().GPTCompletionRange else { return }
+        textContentStorage.textStorage?
+            .replaceCharacters(in: gptRange, with: "") // Removing completion
+    }
 }
 #endif
