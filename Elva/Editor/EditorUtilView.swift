@@ -10,7 +10,7 @@ import SwiftUI
 struct EditorUtilView: View {
     @Binding var content: String
     
-    @EnvironmentObject var manager: DocumentManager
+    @EnvironmentObject var manager: DocumentStateManager
     
     @State var showDetails = false
     
@@ -31,6 +31,8 @@ struct EditorUtilView: View {
                         Section("Counter") {
                             InfoRow(label: "Words", value: content.numberOfWords)
                             InfoRow(label: "Tokens", value: manager.tokens)
+                            InfoRow(label: "Paragraphs", value: manager.paragraph)
+                            InfoRow(label: "Sentences", value: manager.sentences)
                         }
                     }
                 }

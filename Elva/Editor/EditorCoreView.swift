@@ -13,7 +13,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
     
     @Binding var text: String
     
-    @EnvironmentObject var manager: DocumentManager
+    @EnvironmentObject var manager: DocumentStateManager
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)

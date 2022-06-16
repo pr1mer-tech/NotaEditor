@@ -10,7 +10,7 @@ import SwiftUI
 struct ElvaApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: MarkdownDocument()) { file in
-            ContentView(content: file.$document.content, manager: DocumentManager())
+            ContentView(content: file.$document.content, manager: DocumentStateManager())
         }
     }
 }

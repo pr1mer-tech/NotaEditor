@@ -9,17 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var content: String
-    @StateObject var manager: DocumentManager
+    @StateObject var manager: DocumentStateManager
     
     @State var showInspector = false
     
     var body: some View {
-        HSplitView {
+        SplitView {
             EditorView(content: $content)
-            if showInspector {
-                SmartPane()
-                    .frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
-            }
+            SmartPane()
+                .frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
+                .visualEffect(material: .sidebar)
         }
         .toolbar {
             Button(action: { showInspector.toggle() }) {
@@ -33,6 +32,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(content: .constant(""), manager: DocumentManager())
+        ContentView(content: .constant(""), manager: DocumentStateManager())
     }
 }

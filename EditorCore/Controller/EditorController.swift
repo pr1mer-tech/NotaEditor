@@ -26,8 +26,6 @@ public class EditorController: NSViewController, STTextViewDelegate {
         textView.storage = storage
         textView.widthTracksTextView = true
         textView.highlightSelectedLine = true
-        textView.textFinder.isIncrementalSearchingEnabled = false
-//        textView.textFinder.incrementalSearchingShouldDimContentView = false
         
         // Storage
         textView.textContentStorage.automaticallySynchronizesToBackingStore = true
