@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */; };
 		684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38928508D85003D3272 /* CompletionProvider.swift */; };
 		684CF38C2851CFF0003D3272 /* CompletionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38B2851CFF0003D3272 /* CompletionRequest.swift */; };
 		684CF38F2851E05D003D3272 /* TextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38E2851E05D003D3272 /* TextRange.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterInspectorLayoutView.swift; sourceTree = "<group>"; };
 		684CF38928508D85003D3272 /* CompletionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionProvider.swift; sourceTree = "<group>"; };
 		684CF38B2851CFF0003D3272 /* CompletionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRequest.swift; sourceTree = "<group>"; };
 		684CF38E2851E05D003D3272 /* TextRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRange.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		68FDE0D82859879900C59F8D /* SmartPane */ = {
 			isa = PBXGroup;
 			children = (
+				684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */,
 				68FDE0DB28598A6300C59F8D /* SmartPane.swift */,
 			);
 			path = SmartPane;
@@ -503,6 +506,7 @@
 			files = (
 				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
+				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
 				68EFA2502857376000F7B587 /* DocumentStateManager.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,

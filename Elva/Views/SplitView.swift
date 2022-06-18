@@ -11,6 +11,8 @@ import SwiftUI
  * It takes a ViewBuilder as an input. The first view is the master view, the second is the detail view (right sidebar).
  */
 struct SplitView<Master: View, Detail: View>: NSViewControllerRepresentable {
+    @Binding var showDetail: Bool
+    
     let master: Master
     
     var masterItem: NSSplitViewItem {
@@ -24,34 +26,32 @@ struct SplitView<Master: View, Detail: View>: NSViewControllerRepresentable {
     var detailItem: NSSplitViewItem {
         let controller = NSHostingController(rootView: self.detail)
         let item = NSSplitViewItem(sidebarWithViewController: controller)
-        
-        item.titlebarSeparatorStyle = .line
-        item.allowsFullHeightLayout = true
-        item.automaticMaximumThickness = 400
-        item.maximumThickness = 400
-        item.minimumThickness = 200
-        
         return item
     }
 
-    init(@ViewBuilder content: @escaping () -> TupleView<(Master, Detail)>) {
+    init(showDetail: Binding<Bool>, @ViewBuilder content: @escaping () -> TupleView<(Master, Detail)>) {
         let cv = content().value
         self.master = cv.0
         self.detail = cv.1
+        self._showDetail = showDetail
     }
 
-    func makeNSViewController(context: NSViewControllerRepresentableContext<SplitView>) -> NSSplitViewController {
-        let splitViewController = NSSplitViewController()
+    // MARK: View Initialization
+    func makeNSViewController(context: NSViewControllerRepresentableContext<SplitView>) -> MasterInspectorLayoutView {
+        let splitViewController = MasterInspectorLayoutView()
+        
+        // Subviews
         splitViewController.addSplitViewItem(masterItem)
         splitViewController.addSplitViewItem(detailItem)
-        
-        // MARK: Styling
-        splitViewController.splitView.dividerStyle = .thin
         
         return splitViewController
     }
 
-    func updateNSViewController(_ splitViewController: NSSplitViewController, context: NSViewControllerRepresentableContext<SplitView>) {
+    func updateNSViewController(_ splitViewController: MasterInspectorLayoutView, context: NSViewControllerRepresentableContext<SplitView>) {
         // Nothing to do here
+        guard splitViewController.detailItem.isCollapsed != showDetail else { return }
+        DispatchQueue.main.async {
+            splitViewController.toggleSidebar(nil)
+        }
     }
 }

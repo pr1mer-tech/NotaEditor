@@ -14,10 +14,10 @@ struct ContentView: View {
     @State var showInspector = false
     
     var body: some View {
-        SplitView {
+        SplitView(showDetail: $showInspector) {
             EditorView(content: $content)
             SmartPane()
-                .frame(minWidth: 200, idealWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxHeight: .infinity)
                 .visualEffect(material: .sidebar)
         }
         .toolbar {
