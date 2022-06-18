@@ -21,6 +21,7 @@ struct ContentView: View {
                 .visualEffect(material: .sidebar)
         }
         .toolbar {
+            Spacer()
             Button(action: { showInspector.toggle() }) {
                 Label("Toggle Inspector", systemImage: "sidebar.right")
             }

@@ -17,7 +17,6 @@
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
 		686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */; };
 		686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D2285B19D70075A4A6 /* SplitView.swift */; };
-		68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A685EC28470BD800E792D4 /* ElvaApp.swift */; };
 		68A685EF28470BD800E792D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A685EE28470BD800E792D4 /* ContentView.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
 		68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F328470BDA00E792D4 /* Preview Assets.xcassets */; };
@@ -36,6 +35,9 @@
 		68A6863C28470CC600E792D4 /* EditorCore-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6862928470CC600E792D4 /* EditorCore-macOS.swift */; };
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
 		68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorCoreView.swift */; };
+		68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AB377D285DA2D200D4D28F /* AppDelegate.swift */; };
+		68AB3780285DAFF100D4D28F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AB377F285DAFF100D4D28F /* WindowController.swift */; };
+		68AB3787285DB1AA00D4D28F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AB3786285DB1AA00D4D28F /* Main.storyboard */; };
 		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 		68D5EEB42856EB04005372BD /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB32856EB04005372BD /* Subscript.swift */; };
 		68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D722858300A00B77770 /* CompletionHandling.swift */; };
@@ -99,7 +101,6 @@
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		686CD9D2285B19D70075A4A6 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		68A685EC28470BD800E792D4 /* ElvaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElvaApp.swift; sourceTree = "<group>"; };
 		68A685EE28470BD800E792D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68A685F028470BDA00E792D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A685F328470BDA00E792D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -119,6 +120,9 @@
 		68A6863528470CC600E792D4 /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
 		68A6864928470F1B00E792D4 /* EditorCoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCoreView.swift; sourceTree = "<group>"; };
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
+		68AB377D285DA2D200D4D28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		68AB377F285DAFF100D4D28F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		68AB3786285DB1AA00D4D28F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		68D5EEB12856D966005372BD /* AttributedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringKeys.swift; sourceTree = "<group>"; };
 		68D5EEB32856EB04005372BD /* Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
 		68E92D722858300A00B77770 /* CompletionHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionHandling.swift; sourceTree = "<group>"; };
@@ -226,17 +230,16 @@
 		68A685EB28470BD800E792D4 /* Elva */ = {
 			isa = PBXGroup;
 			children = (
+				68AB3781285DB02D00D4D28F /* App */,
 				68EFA258285741E900F7B587 /* Utils */,
 				68EFA25528573D1700F7B587 /* Views */,
 				68EFA24928572D4300F7B587 /* Info.plist */,
 				68FDE0D82859879900C59F8D /* SmartPane */,
 				68A6864828470F0E00E792D4 /* Editor */,
-				68A685EC28470BD800E792D4 /* ElvaApp.swift */,
 				68A685EE28470BD800E792D4 /* ContentView.swift */,
 				68A685F028470BDA00E792D4 /* Assets.xcassets */,
 				68A685F528470BDA00E792D4 /* Elva.entitlements */,
 				68A685F228470BDA00E792D4 /* Preview Content */,
-				68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */,
 			);
 			path = Elva;
 			sourceTree = "<group>";
@@ -293,6 +296,17 @@
 				68A6862728470CC600E792D4 /* Theme.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		68AB3781285DB02D00D4D28F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				68AB3786285DB1AA00D4D28F /* Main.storyboard */,
+				68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */,
+				68AB377F285DAFF100D4D28F /* WindowController.swift */,
+				68AB377D285DA2D200D4D28F /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		68EFA24E2857375600F7B587 /* Model */ = {
@@ -480,6 +494,7 @@
 			files = (
 				68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */,
 				68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */,
+				68AB3787285DB1AA00D4D28F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +522,7 @@
 				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
+				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68EFA2502857376000F7B587 /* DocumentStateManager.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
@@ -514,8 +530,8 @@
 				686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
-				68A685ED28470BD800E792D4 /* ElvaApp.swift in Sources */,
 				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,
+				68AB3780285DAFF100D4D28F /* WindowController.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
 				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);
@@ -706,6 +722,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elva/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -737,6 +755,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Elva/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
