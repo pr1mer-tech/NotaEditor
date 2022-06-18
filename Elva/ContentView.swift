@@ -9,11 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var document: MarkdownDocument
-    
-    @State var showInspector = false
+    @ObservedObject var toolbar: ToolbarStateManager
     
     var body: some View {
-        SplitView(showDetail: $showInspector) {
+        SplitView(showDetail: toolbar.showInspector) {
             EditorView()
             SmartPane()
                 .frame(maxHeight: .infinity)
@@ -21,7 +20,7 @@ struct ContentView: View {
         }
         .toolbar {
             Spacer()
-            Button(action: { showInspector.toggle() }) {
+            Button(action: { toolbar.showInspector.toggle() }) {
                 Label("Toggle Inspector", systemImage: "sidebar.right")
             }
         }

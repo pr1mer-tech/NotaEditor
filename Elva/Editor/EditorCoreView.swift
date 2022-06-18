@@ -33,8 +33,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
         }
         
         func textStorage(_ textStorage: NSTextStorage, willProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
-            guard let vc = self.parent.document.contentViewController else { return }
-            self.parent.document.objectDidBeginEditing(vc)
         }
         
         func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
@@ -50,8 +48,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
             
             let endIndex = parent.document.content.utf16.index(insertIndex, offsetBy: numberOfCharactersToDelete())
             self.parent.document.content.replaceSubrange(insertIndex..<endIndex, with: edited)
-            guard let vc = self.parent.document.contentViewController else { return }
-            self.parent.document.objectDidEndEditing(vc)
         }
     }
 

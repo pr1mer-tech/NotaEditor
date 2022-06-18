@@ -29,8 +29,6 @@ class MarkdownDocument: NSDocument, ObservableObject {
         self.sentences = content.numberOfSentences
     }
     
-    var contentViewController: NSViewController? = nil
-    
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
@@ -57,18 +55,21 @@ class MarkdownDocument: NSDocument, ObservableObject {
     
     /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
-        // Returns the storyboard that contains your document window.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        if let windowController =
-            storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
-            let contentView = ContentView(document: self)
-            
-            windowController.contentViewController = NSHostingController(rootView: contentView)
-            contentViewController = windowController.contentViewController
-            
-            addWindowController(windowController)
-        }
+        let toolbarState = ToolbarStateManager()
+        let contentView = ContentView(document: self, toolbar: toolbarState)
+        
+        let window = NSWindow(
+              contentRect: NSRect(x: 0, y: 0, width: 250, height: 300),
+              styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+              backing: .buffered, defer: false)
+        
+        window.contentView = NSHostingView(rootView: contentView)
+        
+        let windowController = WindowController(window: window)
+        windowController.toolbarManager = toolbarState
+        
+        self.addWindowController(windowController)
+        windowController.windowDidLoad()
     }
     
     // MARK: - Reading and Writing

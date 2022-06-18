@@ -11,7 +11,7 @@ import SwiftUI
  * It takes a ViewBuilder as an input. The first view is the master view, the second is the detail view (right sidebar).
  */
 struct SplitView<Master: View, Detail: View>: NSViewControllerRepresentable {
-    @Binding var showDetail: Bool
+    var showDetail: Bool
     
     let master: Master
     
@@ -29,11 +29,11 @@ struct SplitView<Master: View, Detail: View>: NSViewControllerRepresentable {
         return item
     }
 
-    init(showDetail: Binding<Bool>, @ViewBuilder content: @escaping () -> TupleView<(Master, Detail)>) {
+    init(showDetail: Bool, @ViewBuilder content: @escaping () -> TupleView<(Master, Detail)>) {
         let cv = content().value
         self.master = cv.0
         self.detail = cv.1
-        self._showDetail = showDetail
+        self.showDetail = showDetail
     }
 
     // MARK: View Initialization

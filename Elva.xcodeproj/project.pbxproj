@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68F5285DD5D500EC1861 /* WindowController.swift */; };
+		683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */; };
+		683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */; };
+		683A68FD285DDECE00EC1861 /* ToolbarStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */; };
 		684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */; };
 		684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38928508D85003D3272 /* CompletionProvider.swift */; };
 		684CF38C2851CFF0003D3272 /* CompletionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38B2851CFF0003D3272 /* CompletionRequest.swift */; };
@@ -36,7 +40,6 @@
 		68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6863528470CC600E792D4 /* UniversalTypes.swift */; };
 		68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864928470F1B00E792D4 /* EditorCoreView.swift */; };
 		68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AB377D285DA2D200D4D28F /* AppDelegate.swift */; };
-		68AB3780285DAFF100D4D28F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AB377F285DAFF100D4D28F /* WindowController.swift */; };
 		68AB3787285DB1AA00D4D28F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AB3786285DB1AA00D4D28F /* Main.storyboard */; };
 		68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB12856D966005372BD /* AttributedStringKeys.swift */; };
 		68D5EEB42856EB04005372BD /* Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D5EEB32856EB04005372BD /* Subscript.swift */; };
@@ -92,6 +95,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		683A68F5285DD5D500EC1861 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarDelegate.swift; sourceTree = "<group>"; };
+		683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarIdentifier.swift; sourceTree = "<group>"; };
+		683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStateManager.swift; sourceTree = "<group>"; };
 		684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterInspectorLayoutView.swift; sourceTree = "<group>"; };
 		684CF38928508D85003D3272 /* CompletionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionProvider.swift; sourceTree = "<group>"; };
 		684CF38B2851CFF0003D3272 /* CompletionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRequest.swift; sourceTree = "<group>"; };
@@ -120,7 +127,6 @@
 		68A6864928470F1B00E792D4 /* EditorCoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCoreView.swift; sourceTree = "<group>"; };
 		68A6864B28470F4400E792D4 /* EditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorController.swift; sourceTree = "<group>"; };
 		68AB377D285DA2D200D4D28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68AB377F285DAFF100D4D28F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		68AB3786285DB1AA00D4D28F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		68D5EEB12856D966005372BD /* AttributedStringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringKeys.swift; sourceTree = "<group>"; };
 		68D5EEB32856EB04005372BD /* Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscript.swift; sourceTree = "<group>"; };
@@ -167,6 +173,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		683A68F7285DD8CA00EC1861 /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */,
+				683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */,
+				683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */,
+			);
+			path = Toolbar;
+			sourceTree = "<group>";
+		};
 		684CF38828508D2B003D3272 /* GPT-API */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,10 +314,11 @@
 		68AB3781285DB02D00D4D28F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				683A68F7285DD8CA00EC1861 /* Toolbar */,
 				68AB3786285DB1AA00D4D28F /* Main.storyboard */,
 				68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */,
-				68AB377F285DAFF100D4D28F /* WindowController.swift */,
 				68AB377D285DA2D200D4D28F /* AppDelegate.swift */,
+				683A68F5285DD5D500EC1861 /* WindowController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -510,16 +527,19 @@
 			files = (
 				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
+				683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
+				683A68FD285DDECE00EC1861 /* ToolbarStateManager.swift in Sources */,
+				683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */,
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
+				683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */,
 				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,
 				686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
 				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,
-				68AB3780285DAFF100D4D28F /* WindowController.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
 				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);
