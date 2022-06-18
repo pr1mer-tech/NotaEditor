@@ -44,7 +44,6 @@
 		68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D74285858B500B77770 /* RequestBuilder.swift */; };
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
 		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
-		68EFA2502857376000F7B587 /* DocumentStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24F2857376000F7B587 /* DocumentStateManager.swift */; };
 		68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */; };
 		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
 		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
@@ -130,7 +129,6 @@
 		68EFA24928572D4300F7B587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
-		68EFA24F2857376000F7B587 /* DocumentStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStateManager.swift; sourceTree = "<group>"; };
 		68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStorageDelegate.swift; sourceTree = "<group>"; };
 		68EFA25628573D2200F7B587 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		68EFA259285741F200F7B587 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
@@ -280,7 +278,6 @@
 		68A6864828470F0E00E792D4 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
-				68EFA24E2857375600F7B587 /* Model */,
 				68A6864928470F1B00E792D4 /* EditorCoreView.swift */,
 				68EFA24C2857372400F7B587 /* EditorUtilView.swift */,
 				68FDE0D9285987E100C59F8D /* EditorView.swift */,
@@ -307,14 +304,6 @@
 				68AB377D285DA2D200D4D28F /* AppDelegate.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		68EFA24E2857375600F7B587 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				68EFA24F2857376000F7B587 /* DocumentStateManager.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		68EFA251285737E000F7B587 /* Data */ = {
@@ -523,7 +512,6 @@
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
-				68EFA2502857376000F7B587 /* DocumentStateManager.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
 				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,

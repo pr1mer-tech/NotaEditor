@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Binding var content: String
-    @StateObject var manager: DocumentStateManager
+    @StateObject var document: MarkdownDocument
     
     @State var showInspector = false
     
     var body: some View {
         SplitView(showDetail: $showInspector) {
-            EditorView(content: $content)
+            EditorView()
             SmartPane()
                 .frame(maxHeight: .infinity)
                 .visualEffect(material: .sidebar)
@@ -26,13 +25,7 @@ struct ContentView: View {
                 Label("Toggle Inspector", systemImage: "sidebar.right")
             }
         }
-        .environmentObject(manager)
+        .environmentObject(document)
         .frame(minWidth: 400, minHeight: 225)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(content: .constant(""), manager: DocumentStateManager())
     }
 }

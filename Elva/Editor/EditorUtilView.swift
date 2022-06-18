@@ -8,31 +8,29 @@
 import SwiftUI
 
 struct EditorUtilView: View {
-    @Binding var content: String
-    
-    @EnvironmentObject var manager: DocumentStateManager
+    @EnvironmentObject var document: MarkdownDocument
     
     @State var showDetails = false
     
     var body: some View {
         HStack {
-            if manager.networkActivity {
+            if document.networkActivity {
                 ProgressView("Thinking...")
                     .progressViewStyle(.horizontal)
             }
             Spacer()
-            Text("\(content.numberOfWords) words")
+            Text("\(document.content.numberOfWords) words")
                 .onTapGesture {
                     showDetails.toggle()
-                    self.manager.process(content: content)
+                    self.document.process()
                 }
                 .popover(isPresented: $showDetails, arrowEdge: .top) {
                     List {
                         Section("Counter") {
-                            InfoRow(label: "Words", value: content.numberOfWords)
-                            InfoRow(label: "Tokens", value: manager.tokens)
-                            InfoRow(label: "Paragraphs", value: manager.paragraph)
-                            InfoRow(label: "Sentences", value: manager.sentences)
+                            InfoRow(label: "Words", value: document.content.numberOfWords)
+                            InfoRow(label: "Tokens", value: document.tokens)
+                            InfoRow(label: "Paragraphs", value: document.paragraph)
+                            InfoRow(label: "Sentences", value: document.sentences)
                         }
                     }
                 }
@@ -44,6 +42,6 @@ struct EditorUtilView: View {
 
 struct EditorUtilView_Previews: PreviewProvider {
     static var previews: some View {
-        EditorUtilView(content: .constant(""))
+        EditorUtilView()
     }
 }

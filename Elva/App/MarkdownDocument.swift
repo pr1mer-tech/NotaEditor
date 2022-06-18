@@ -6,11 +6,31 @@
 //
 
 import SwiftUI
+import GPT_Tokenizer
+class MarkdownDocument: NSDocument, ObservableObject {
 
-class MarkdownDocument: NSDocument {
+    @Published var content: String = "" {
+        willSet {
+            undoManager?.registerUndo(withTarget: self) { $0.content = self.content }
+        }
+    }
 
-    @State var content: String = ""
-
+    @Published var networkActivity = false
+        
+    @Published var tokens: Int = 0
+    @Published var paragraph: Int = 0
+    @Published var sentences: Int = 0
+    
+    func process() {
+        let tokenizer = GPT_Tokenizer()
+        self.tokens = tokenizer.encode(text: content).count
+        
+        self.paragraph = content.numberOfParagraphs
+        self.sentences = content.numberOfSentences
+    }
+    
+    var contentViewController: NSViewController? = nil
+    
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
@@ -42,11 +62,12 @@ class MarkdownDocument: NSDocument {
         if let windowController =
             storyboard.instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
-            addWindowController(windowController)
-            
-            let contentView = ContentView(content: $content, manager: DocumentStateManager())
+            let contentView = ContentView(document: self)
             
             windowController.contentViewController = NSHostingController(rootView: contentView)
+            contentViewController = windowController.contentViewController
+            
+            addWindowController(windowController)
         }
     }
     
