@@ -92,4 +92,11 @@ public class EditorController: NSViewController, STTextViewDelegate {
             )
             return decorationView
     }
+    
+    public func textViewDidChangeSelection(_ notification: Notification) {
+        let selected = textView.selectedRange()
+        let attributed = storage.attributedSubstring(from: selected)
+        guard let storageDelegate = storage.delegate as? EditorStorageDelegate else { return }
+        storageDelegate.selecting(text: selected.length > 0 ? attributed.string : nil)
+    }
 }

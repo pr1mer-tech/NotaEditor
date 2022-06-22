@@ -15,7 +15,10 @@ struct SmartPane: View {
         VStack(spacing: 0) {
             SmartPaneMenu(selected: $selected)
             ScrollView {
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                switch selected {
+                case .instantModifications:
+                    InstantModification()
+                }
             }
         }
         .edgesIgnoringSafeArea(.top)

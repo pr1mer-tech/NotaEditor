@@ -23,6 +23,6 @@ struct SmartPaneMenu: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
-        .frame(height: 50)
+        .frame(height: 52) // Unified toolbar style
     }
 }

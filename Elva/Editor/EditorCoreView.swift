@@ -17,6 +17,10 @@ struct EditorCoreView: NSViewControllerRepresentable {
     }
     
     class Coordinator: NSObject, EditorStorageDelegate {
+        func selecting(text: String?) {
+            self.parent.document.selecting = text
+        }
+        
         func startedCompletionActivity(with request: CompletionRequest) {
             self.parent.document.networkActivity = true
         }
