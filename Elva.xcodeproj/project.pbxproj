@@ -19,7 +19,6 @@
 		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
 		686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */; };
-		686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D2285B19D70075A4A6 /* SplitView.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
 		68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F328470BDA00E792D4 /* Preview Assets.xcassets */; };
 		68A6860428470C0800E792D4 /* EditorCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 68A6860328470C0800E792D4 /* EditorCore.docc */; };
@@ -102,7 +101,6 @@
 		684CF38E2851E05D003D3272 /* TextRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRange.swift; sourceTree = "<group>"; };
 		684CF3902851E703003D3272 /* Sentences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentences.swift; sourceTree = "<group>"; };
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
-		686CD9D2285B19D70075A4A6 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A685F028470BDA00E792D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A685F328470BDA00E792D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -341,7 +339,6 @@
 				686CD9CF285ADABE0075A4A6 /* Modifiers */,
 				68EFA25628573D2200F7B587 /* ProgressView.swift */,
 				68FDE0E02859B0D500C59F8D /* InfoRow.swift */,
-				686CD9D2285B19D70075A4A6 /* SplitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,7 +525,6 @@
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
 				683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */,
-				686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
 				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,

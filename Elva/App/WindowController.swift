@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class WindowController: NSWindowController, NSWindowDelegate, NSToolbarItemValidation {
+class WindowController: NSWindowController, NSWindowDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,19 +36,15 @@ class WindowController: NSWindowController, NSWindowDelegate, NSToolbarItemValid
         
         let toolbar = NSToolbar(identifier: "Main Window Toolbar")
         toolbar.delegate = self
-        toolbar.allowsUserCustomization = true
-        toolbar.autosavesConfiguration = true
-        toolbar.displayMode = .default
+        toolbar.allowsUserCustomization = false
+        toolbar.displayMode = .iconOnly
         
         window.toolbar = toolbar
         window.toolbar?.validateVisibleItems()
     }
     
-    // MARK: - Toolbar Validation
-    
-    func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
-        // Disable item based on conditions
-        
-        return true
+    // MARK: - Window Delegate
+    func window(_ window: NSWindow, willUseFullScreenPresentationOptions proposedOptions: NSApplication.PresentationOptions = []) -> NSApplication.PresentationOptions {
+        return [.autoHideToolbar, .autoHideMenuBar, .fullScreen]
     }
 }

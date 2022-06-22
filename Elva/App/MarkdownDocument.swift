@@ -59,6 +59,7 @@ class MarkdownDocument: NSDocument, ObservableObject {
               contentRect: NSRect(x: 0, y: 0, width: 250, height: 300),
               styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
               backing: .buffered, defer: false)
+        window.titlebarAppearsTransparent = true
         
         let layoutView = MasterInspectorLayoutView()
         layoutView.document = self

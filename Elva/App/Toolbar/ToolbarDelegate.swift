@@ -22,6 +22,13 @@ extension WindowController: NSToolbarDelegate {
             item.image = NSImage(systemSymbolName: "sidebar.right", accessibilityDescription: "Toggle Right Sidebar")
             return item
         }
+        // 2) This is how we create the tracking separator, and we provide a reference to the splitview
+        else if itemIdentifier == .trackingSplitItem {
+            guard let splitViewController = self.contentViewController as? NSSplitViewController else { return nil }
+            return NSTrackingSeparatorToolbarItem(identifier: .trackingSplitItem,
+                                                         splitView: splitViewController.splitView,
+                                                         dividerIndex: 0)
+        }
         
         return nil
     }
@@ -30,6 +37,7 @@ extension WindowController: NSToolbarDelegate {
         return [
             .flexibleSpace,
             .inspectorToggle,
+            .trackingSplitItem
         ]
     }
     
@@ -37,12 +45,19 @@ extension WindowController: NSToolbarDelegate {
         return [
             .flexibleSpace,
             .inspectorToggle,
+            .trackingSplitItem
         ]
     }
     
     // MARK: - Actions
     @objc func toggleInspector(_ sender: Any) {
-        guard let splitViewController = self.contentViewController as? NSSplitViewController else { return }
+        guard let splitViewController = self.contentViewController as? MasterInspectorLayoutView else { return }
+        if !splitViewController.detailItem.isCollapsed {
+            self.window?.toolbar?.removeItem(at: 2)
+        } else {
+            self.window?.toolbar?.insertItem(withItemIdentifier: .trackingSplitItem, at: 2)
+        }
+        
         splitViewController.toggleSidebar(sender)
     }
 }

@@ -18,8 +18,7 @@ class MasterInspectorLayoutView: NSSplitViewController {
 
     lazy var detailItem: NSSplitViewItem = {
         let pane = SmartPane()
-            .frame(maxHeight: .infinity)
-            .visualEffect(material: .sidebar)
+//            .edgesIgnoringSafeArea(.top)
             .environmentObject(document)
         let controller = NSHostingController(rootView: pane)
         let item = NSSplitViewItem(sidebarWithViewController: controller)
@@ -34,10 +33,8 @@ class MasterInspectorLayoutView: NSSplitViewController {
         
         // Subview styling
         detailItem.titlebarSeparatorStyle = .line
-        
         detailItem.allowsFullHeightLayout = true
         
-        detailItem.holdingPriority = .defaultHigh
         // Subviews
         self.addSplitViewItem(masterItem)
         self.addSplitViewItem(detailItem)
