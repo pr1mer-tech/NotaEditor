@@ -10,7 +10,6 @@
 		683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68F5285DD5D500EC1861 /* WindowController.swift */; };
 		683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */; };
 		683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */; };
-		683A68FD285DDECE00EC1861 /* ToolbarStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */; };
 		684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */; };
 		684CF38A28508D85003D3272 /* CompletionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38928508D85003D3272 /* CompletionProvider.swift */; };
 		684CF38C2851CFF0003D3272 /* CompletionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684CF38B2851CFF0003D3272 /* CompletionRequest.swift */; };
@@ -21,7 +20,6 @@
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
 		686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */; };
 		686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D2285B19D70075A4A6 /* SplitView.swift */; };
-		68A685EF28470BD800E792D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A685EE28470BD800E792D4 /* ContentView.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
 		68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F328470BDA00E792D4 /* Preview Assets.xcassets */; };
 		68A6860428470C0800E792D4 /* EditorCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 68A6860328470C0800E792D4 /* EditorCore.docc */; };
@@ -98,7 +96,6 @@
 		683A68F5285DD5D500EC1861 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarDelegate.swift; sourceTree = "<group>"; };
 		683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarIdentifier.swift; sourceTree = "<group>"; };
-		683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStateManager.swift; sourceTree = "<group>"; };
 		684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterInspectorLayoutView.swift; sourceTree = "<group>"; };
 		684CF38928508D85003D3272 /* CompletionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionProvider.swift; sourceTree = "<group>"; };
 		684CF38B2851CFF0003D3272 /* CompletionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRequest.swift; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		686CD9D2285B19D70075A4A6 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		68A685EE28470BD800E792D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68A685F028470BDA00E792D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A685F328470BDA00E792D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		68A685F528470BDA00E792D4 /* Elva.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Elva.entitlements; sourceTree = "<group>"; };
@@ -178,7 +174,6 @@
 			children = (
 				683A68F8285DD8DC00EC1861 /* ToolbarDelegate.swift */,
 				683A68FA285DD8F500EC1861 /* ToolbarIdentifier.swift */,
-				683A68FC285DDECE00EC1861 /* ToolbarStateManager.swift */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -250,7 +245,6 @@
 				68EFA24928572D4300F7B587 /* Info.plist */,
 				68FDE0D82859879900C59F8D /* SmartPane */,
 				68A6864828470F0E00E792D4 /* Editor */,
-				68A685EE28470BD800E792D4 /* ContentView.swift */,
 				68A685F028470BDA00E792D4 /* Assets.xcassets */,
 				68A685F528470BDA00E792D4 /* Elva.entitlements */,
 				68A685F228470BDA00E792D4 /* Preview Content */,
@@ -529,13 +523,11 @@
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
 				683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
-				683A68FD285DDECE00EC1861 /* ToolbarStateManager.swift in Sources */,
 				683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */,
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
 				683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */,
-				68A685EF28470BD800E792D4 /* ContentView.swift in Sources */,
 				686CD9D3285B19D70075A4A6 /* SplitView.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,

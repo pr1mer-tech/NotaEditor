@@ -42,6 +42,7 @@ extension WindowController: NSToolbarDelegate {
     
     // MARK: - Actions
     @objc func toggleInspector(_ sender: Any) {
-        toolbarManager.showInspector.toggle()
+        guard let splitViewController = self.contentViewController as? NSSplitViewController else { return }
+        splitViewController.toggleSidebar(sender)
     }
 }

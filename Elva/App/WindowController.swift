@@ -9,8 +9,6 @@ import Cocoa
 
 class WindowController: NSWindowController, NSWindowDelegate, NSToolbarItemValidation {
     
-    var toolbarManager: ToolbarStateManager!
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         /** NSWindows loaded from the storyboard will be cascaded

@@ -55,18 +55,17 @@ class MarkdownDocument: NSDocument, ObservableObject {
     
     /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
-        let toolbarState = ToolbarStateManager()
-        let contentView = ContentView(document: self, toolbar: toolbarState)
-        
         let window = NSWindow(
               contentRect: NSRect(x: 0, y: 0, width: 250, height: 300),
               styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
               backing: .buffered, defer: false)
         
-        window.contentView = NSHostingView(rootView: contentView)
+        let layoutView = MasterInspectorLayoutView()
+        layoutView.document = self
+        window.contentViewController = layoutView
+        
         
         let windowController = WindowController(window: window)
-        windowController.toolbarManager = toolbarState
         
         self.addWindowController(windowController)
         windowController.windowDidLoad()
