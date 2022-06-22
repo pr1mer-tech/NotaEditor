@@ -18,6 +18,7 @@
 		6858DC52284D875F003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC51284D875F003A5269 /* STTextView */; };
 		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
+		68669F362862F58500853944 /* SmartPaneMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68669F352862F58500853944 /* SmartPaneMenu.swift */; };
 		686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
 		68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F328470BDA00E792D4 /* Preview Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		684CF38B2851CFF0003D3272 /* CompletionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionRequest.swift; sourceTree = "<group>"; };
 		684CF38E2851E05D003D3272 /* TextRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRange.swift; sourceTree = "<group>"; };
 		684CF3902851E703003D3272 /* Sentences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentences.swift; sourceTree = "<group>"; };
+		68669F352862F58500853944 /* SmartPaneMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPaneMenu.swift; sourceTree = "<group>"; };
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A685F028470BDA00E792D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			children = (
 				684101C6285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift */,
 				68FDE0DB28598A6300C59F8D /* SmartPane.swift */,
+				68669F352862F58500853944 /* SmartPaneMenu.swift */,
 			);
 			path = SmartPane;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
+				68669F362862F58500853944 /* SmartPaneMenu.swift in Sources */,
 				683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,

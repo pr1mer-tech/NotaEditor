@@ -57,9 +57,10 @@ class MarkdownDocument: NSDocument, ObservableObject {
     override func makeWindowControllers() {
         let window = NSWindow(
               contentRect: NSRect(x: 0, y: 0, width: 250, height: 300),
-              styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+              styleMask: [.titled, .unifiedTitleAndToolbar, .closable, .miniaturizable, .resizable, .fullSizeContentView],
               backing: .buffered, defer: false)
         window.titlebarAppearsTransparent = true
+        window.titlebarSeparatorStyle = .shadow
         
         let layoutView = MasterInspectorLayoutView()
         layoutView.document = self
@@ -67,7 +68,6 @@ class MarkdownDocument: NSDocument, ObservableObject {
         
         
         let windowController = WindowController(window: window)
-        
         self.addWindowController(windowController)
         windowController.windowDidLoad()
     }

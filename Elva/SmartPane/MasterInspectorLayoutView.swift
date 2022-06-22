@@ -18,7 +18,7 @@ class MasterInspectorLayoutView: NSSplitViewController {
 
     lazy var detailItem: NSSplitViewItem = {
         let pane = SmartPane()
-//            .edgesIgnoringSafeArea(.top)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .environmentObject(document)
         let controller = NSHostingController(rootView: pane)
         let item = NSSplitViewItem(sidebarWithViewController: controller)
@@ -32,17 +32,19 @@ class MasterInspectorLayoutView: NSSplitViewController {
         self.splitView.dividerStyle = .thin
         
         // Subview styling
-        detailItem.titlebarSeparatorStyle = .line
+        detailItem.titlebarSeparatorStyle = .shadow
         detailItem.allowsFullHeightLayout = true
         
         // Subviews
         self.addSplitViewItem(masterItem)
         self.addSplitViewItem(detailItem)
-    }
 
-    override func splitView(_ splitView: NSSplitView, effectiveRect proposedEffectiveRect: NSRect, forDrawnRect drawnRect: NSRect, ofDividerAt dividerIndex: Int) -> NSRect {
-        return NSZeroRect
+        // Constraints
+        detailItem.viewController.view.widthAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
+        detailItem.viewController.view.widthAnchor.constraint(lessThanOrEqualToConstant: 350).isActive = true
     }
     
-    
+    override func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
+        return false
+    }
 }

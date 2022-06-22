@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import SwiftUI
 
 
 // MARK: - Toolbar Delegate
@@ -52,12 +53,12 @@ extension WindowController: NSToolbarDelegate {
     // MARK: - Actions
     @objc func toggleInspector(_ sender: Any) {
         guard let splitViewController = self.contentViewController as? MasterInspectorLayoutView else { return }
-        if !splitViewController.detailItem.isCollapsed {
+        splitViewController.toggleSidebar(sender)
+        
+        if splitViewController.detailItem.isCollapsed {
             self.window?.toolbar?.removeItem(at: 2)
         } else {
             self.window?.toolbar?.insertItem(withItemIdentifier: .trackingSplitItem, at: 2)
         }
-        
-        splitViewController.toggleSidebar(sender)
     }
 }

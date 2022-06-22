@@ -9,5 +9,5 @@ import Cocoa
 
 extension NSToolbarItem.Identifier {
     static let inspectorToggle = NSToolbarItem.Identifier("ToolbarInspectorToggle")
-    static let trackingSplitItem = NSToolbarItem.Identifier(rawValue: "TrackingSplitItem")
+    static let trackingSplitItem = NSToolbarItem.Identifier("TrackingSplitItem")
 }
