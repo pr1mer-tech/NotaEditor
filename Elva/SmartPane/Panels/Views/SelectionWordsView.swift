@@ -38,7 +38,7 @@ struct SelectionWordsView: View {
                         .frame(width: 10, height: 10)
                         .offset(x: 3, y: -3)
                 }
-            }
+            }.padding(.horizontal, 3)
             
             Text("\(words) Words")
                 .font(.title)

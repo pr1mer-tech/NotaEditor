@@ -12,10 +12,22 @@ struct InstantModification: View {
     @EnvironmentObject var document: MarkdownDocument
     
     var body: some View {
-        VStack {
+        List {
             SelectionWordsView(words: document.selecting?.numberOfWords ?? 0)
-                .padding()
+            Section("Quick Actions") {
+                Group {
+                    Button {
+                        // Fix spelling
+                    } label: {
+                        Text("Fix spelling")
+                            .frame(maxWidth: .infinity)
+                    }
+                    RephraseButton()
+                }
+                .disabled(document.selecting?.numberOfWords ?? 0 < 5)
+            }
         }
+        .listStyle(SidebarListStyle())
     }
 }
 

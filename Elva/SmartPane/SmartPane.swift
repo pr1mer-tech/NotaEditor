@@ -14,11 +14,9 @@ struct SmartPane: View {
     var body: some View {
         VStack(spacing: 0) {
             SmartPaneMenu(selected: $selected)
-            ScrollView {
-                switch selected {
-                case .instantModifications:
-                    InstantModification()
-                }
+            switch selected {
+            case .instantModifications:
+                InstantModification()
             }
         }
         .edgesIgnoringSafeArea(.top)
