@@ -11,20 +11,34 @@ struct InstantModification: View {
     
     @EnvironmentObject var document: MarkdownDocument
     
+    @StateObject var editionController = EditionController()
+    
     var body: some View {
         List {
             SelectionWordsView(words: document.selecting?.numberOfWords ?? 0)
             Section("Quick Actions") {
                 Group {
-                    Button {
-                        // Fix spelling
+                    AsyncButton {
+                        try await editionController.edit(text: document.selecting!, with: "Fix the spelling mistakes")
                     } label: {
                         Text("Fix spelling")
-                            .frame(maxWidth: .infinity)
                     }
-                    RephraseButton()
+                    RephraseButton(controller: editionController)
                 }
                 .disabled(document.selecting?.numberOfWords ?? 0 < 5)
+            }
+            if let preview = editionController.modification {
+                Spacer()
+                Section("Preview") {
+                    Text(preview)
+                    Button {
+                        document.selectionReplacement = preview
+                    } label: {
+                        Text("Validate")
+                            .frame(maxWidth: .infinity)
+                    }
+
+                }
             }
         }
         .listStyle(SidebarListStyle())

@@ -16,6 +16,7 @@ class MarkdownDocument: NSDocument, ObservableObject {
     }
 
     @Published var selecting: String? = nil
+    @Published var selectionReplacement: String? = nil
     
     @Published var networkActivity = false
         

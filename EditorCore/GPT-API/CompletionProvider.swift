@@ -7,7 +7,9 @@
 
 import Foundation
 
-class CompletionProvider {
+public class CompletionProvider {
+    public static let shared = CompletionProvider()
+    
     let baseURL = "https://elva-gpt.pr1mer.tech"
     
     // MARK: - Make a request
@@ -38,16 +40,16 @@ class CompletionProvider {
     // MARK: - Quick Methods
 
     // Models
-    struct ModelsResponse: Codable {
+    public struct ModelsResponse: Codable {
         var object = "list"
 
-        struct Model: Codable {
+        public struct Model: Codable {
             let id: String
             var object = "model"
         }
         let data: [Model]
     }
-    func getModels() async throws -> [ModelsResponse.Model] {
+    public func getModels() async throws -> [ModelsResponse.Model] {
         let response = try await get(for: ModelsResponse.self, at: "models")
         return response.data
     }

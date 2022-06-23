@@ -88,7 +88,17 @@ extension EditorController {
         // Put cursor at the end
         if let cursorLocation = textView.textContentStorage.location(textView.textLayoutManager.documentRange.location, offsetBy: gptRange.upperBound - replacementString.count) {
             let cursorRange = NSTextRange(location: cursorLocation)
-            print(cursorRange)
+            textView.setSelectedRange(cursorRange, updateLayout: true)
+        }
+    }
+    
+    public func replaceSelectedContent(with text: String) {
+        let selected = self.textView.selectedRange()
+        textView.textContentStorage.textStorage?.replaceCharacters(in: selected, with: text)
+        
+        // Put cursor at the end
+        if let cursorLocation = textView.textContentStorage.location(textView.textLayoutManager.documentRange.location, offsetBy: selected.upperBound) {
+            let cursorRange = NSTextRange(location: cursorLocation)
             textView.setSelectedRange(cursorRange, updateLayout: true)
         }
     }

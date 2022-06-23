@@ -20,6 +20,19 @@ public struct CompletionRequest: Codable {
     var user: String
 }
 
+public struct EditRequest: Codable {
+    var model: String = "text-davinci-edit-001"
+    var input: String
+    var instruction: String
+    var temperature: Double = 0.5
+    var top_p: Double = 1
+    
+    public init(input: String, instruction: String) {
+        self.input = input
+        self.instruction = instruction
+    }
+}
+
 public struct CompletionResponse: Codable {
     var id: String
     var object = "text_completion"
@@ -33,11 +46,27 @@ public struct CompletionResponse: Codable {
     var choices: [Choice]
 }
 
+public struct EditResponse: Codable {
+    var object = "edit"
+    
+    public struct Choice: Codable {
+        public var text: String
+        var index: Int
+    }
+    public var choices: [Choice]
+}
+
+
 extension CompletionProvider {
     // MARK: - Completion Request
     
     func completion(for request: CompletionRequest) async throws -> CompletionResponse {
         let response = try await fetch(for: CompletionResponse.self, at: "completions", with: request, using: "POST")
+        return response
+    }
+    
+    public func edit(for request: EditRequest) async throws -> EditResponse {
+        let response = try await fetch(for: EditResponse.self, at: "edits", with: request, using: "POST")
         return response
     }
 }

@@ -10,7 +10,9 @@ export const handle = async (request: Request) => {
         }
     }
     try {
-        options.body = await request.text();
+        if (request.method === 'POST') {
+            options.body = await request.text();
+        }
     } catch (e) {
         console.error(e);
     }

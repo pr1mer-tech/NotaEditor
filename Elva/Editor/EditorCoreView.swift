@@ -67,5 +67,9 @@ struct EditorCoreView: NSViewControllerRepresentable {
             nsViewController.textView.string = document.content
             context.coordinator.shouldUpdateText = true
         }
+        if document.selectionReplacement != nil {
+            nsViewController.replaceSelectedContent(with: document.selectionReplacement!)
+            document.selectionReplacement = nil // Replacment once
+        }
     }
 }

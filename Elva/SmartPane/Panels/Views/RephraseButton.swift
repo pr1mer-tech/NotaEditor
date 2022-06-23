@@ -10,6 +10,8 @@ import SwiftUI
 struct RephraseButton: View {
     
     @State var expanded = false
+    @EnvironmentObject var document: MarkdownDocument
+    @ObservedObject var controller: EditionController
     
     var body: some View {
         Button {
@@ -29,45 +31,39 @@ struct RephraseButton: View {
         }
         if expanded {
             HStack {
-                Button {
-                    // Simplify
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Rephrase by simplifying")
                 } label: {
                     Text("Simplify")
-                        .frame(maxWidth: .infinity)
                 }
-                Button {
-                    // Negate
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Rephrase by negating")
                 } label: {
                     Text("Negate")
-                        .frame(maxWidth: .infinity)
                 }
             }
             HStack {
-                Button {
-                    // Feynman
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Rephrase using Feynman technique")
                 } label: {
                     Text("Feynman")
-                        .frame(maxWidth: .infinity)
                 }
-                Button {
-                    // Agreeable
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Rephrase it to be agreeable")
                 } label: {
                     Text("Agreeable")
-                        .frame(maxWidth: .infinity)
                 }
             }
             HStack {
-                Button {
-                    // Legalize
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Rephrase it in a legalized way")
                 } label: {
                     Text("Legalize")
-                        .frame(maxWidth: .infinity)
                 }
-                Button {
-                    // Summarize
+                AsyncButton {
+                    try await controller.edit(text: document.selecting!, with: "Summarize it")
                 } label: {
                     Text("Summarize")
-                        .frame(maxWidth: .infinity)
                 }
             }
         }
@@ -76,6 +72,6 @@ struct RephraseButton: View {
 
 struct RephraseButton_Previews: PreviewProvider {
     static var previews: some View {
-        RephraseButton()
+        RephraseButton(controller: EditionController())
     }
 }
