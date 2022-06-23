@@ -132,7 +132,7 @@ class MarkdownDocument: NSDocument, ObservableObject {
         textView.appearance = NSAppearance(named: .aqua)
         
         // Copy the attributed string.
-        textView.textStorage?.append(NSAttributedString(string: content))
+        textView.textStorage?.append(try! NSAttributedString(markdown: content))
         
         let printOperation = NSPrintOperation(view: textView)
         printOperation.runModal(

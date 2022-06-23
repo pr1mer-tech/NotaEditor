@@ -111,7 +111,7 @@
                                         </menuItem>
                                         <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
                                             <connections>
-                                                <action selector="printDocument:" target="Ady-hI-5gd" id="e9t-Sg-arU"/>
+                                                <action selector="printDocument:" target="Ady-hI-5gd" id="vPN-vW-WvQ"/>
                                             </connections>
                                         </menuItem>
                                     </items>
