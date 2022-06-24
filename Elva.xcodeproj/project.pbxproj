@@ -18,6 +18,10 @@
 		68528F592864114500949359 /* RephraseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F582864114500949359 /* RephraseButton.swift */; };
 		68528F5C2864765B00949359 /* EditModification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F5B2864765B00949359 /* EditModification.swift */; };
 		68528F5E28647ACA00949359 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F5D28647ACA00949359 /* AsyncButton.swift */; };
+		68528F60286585AC00949359 /* StringDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F5F286585AC00949359 /* StringDiff.swift */; };
+		68528F622865867800949359 /* TextChangePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F612865867800949359 /* TextChangePreview.swift */; };
+		68528F6428658BBD00949359 /* AttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68528F6328658BBD00949359 /* AttributedText.swift */; };
+		68528F672865BE1400949359 /* TextDiff in Frameworks */ = {isa = PBXBuildFile; productRef = 68528F662865BE1400949359 /* TextDiff */; };
 		6858DC52284D875F003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC51284D875F003A5269 /* STTextView */; };
 		6858DC54284D8786003A5269 /* STTextView in Frameworks */ = {isa = PBXBuildFile; productRef = 6858DC53284D8786003A5269 /* STTextView */; };
 		6858DC55284D9D16003A5269 /* EditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6864B28470F4400E792D4 /* EditorController.swift */; };
@@ -109,6 +113,9 @@
 		68528F582864114500949359 /* RephraseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RephraseButton.swift; sourceTree = "<group>"; };
 		68528F5B2864765B00949359 /* EditModification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditModification.swift; sourceTree = "<group>"; };
 		68528F5D28647ACA00949359 /* AsyncButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		68528F5F286585AC00949359 /* StringDiff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringDiff.swift; sourceTree = "<group>"; };
+		68528F612865867800949359 /* TextChangePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextChangePreview.swift; sourceTree = "<group>"; };
+		68528F6328658BBD00949359 /* AttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedText.swift; sourceTree = "<group>"; };
 		68669F352862F58500853944 /* SmartPaneMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPaneMenu.swift; sourceTree = "<group>"; };
 		68669F3A2863247300853944 /* InstantModification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantModification.swift; sourceTree = "<group>"; };
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
@@ -156,6 +163,7 @@
 			files = (
 				68A6861528470C0900E792D4 /* EditorCore.framework in Frameworks */,
 				68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */,
+				68528F672865BE1400949359 /* TextDiff in Frameworks */,
 				6858DC52284D875F003A5269 /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +249,7 @@
 				68B4BA84286331A800E76DA7 /* SelectionWordsView.swift */,
 				68528F582864114500949359 /* RephraseButton.swift */,
 				68528F5D28647ACA00949359 /* AsyncButton.swift */,
+				68528F612865867800949359 /* TextChangePreview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,9 +335,9 @@
 		68A6864828470F0E00E792D4 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				68FDE0D9285987E100C59F8D /* EditorView.swift */,
 				68A6864928470F1B00E792D4 /* EditorCoreView.swift */,
 				68EFA24C2857372400F7B587 /* EditorUtilView.swift */,
-				68FDE0D9285987E100C59F8D /* EditorView.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 				686CD9CF285ADABE0075A4A6 /* Modifiers */,
 				68EFA25628573D2200F7B587 /* ProgressView.swift */,
 				68FDE0E02859B0D500C59F8D /* InfoRow.swift */,
+				68528F6328658BBD00949359 /* AttributedText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				68EFA259285741F200F7B587 /* WordCount.swift */,
+				68528F5F286585AC00949359 /* StringDiff.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -434,6 +445,7 @@
 			packageProductDependencies = (
 				6858DC51284D875F003A5269 /* STTextView */,
 				68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */,
+				68528F662865BE1400949359 /* TextDiff */,
 			);
 			productName = Elva;
 			productReference = 68A685E928470BD800E792D4 /* Elva.app */;
@@ -514,6 +526,7 @@
 			packageReferences = (
 				6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */,
 				68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */,
+				68528F652865BE1400949359 /* XCRemoteSwiftPackageReference "TextDiff" */,
 			);
 			productRefGroup = 68A685EA28470BD800E792D4 /* Products */;
 			projectDirPath = "";
@@ -573,9 +586,12 @@
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
 				68528F5C2864765B00949359 /* EditModification.swift in Sources */,
 				68B4BA85286331A800E76DA7 /* SelectionWordsView.swift in Sources */,
+				68528F622865867800949359 /* TextChangePreview.swift in Sources */,
 				68669F3B2863247300853944 /* InstantModification.swift in Sources */,
+				68528F60286585AC00949359 /* StringDiff.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
 				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,
+				68528F6428658BBD00949359 /* AttributedText.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
 				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);
@@ -958,6 +974,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		68528F652865BE1400949359 /* XCRemoteSwiftPackageReference "TextDiff" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/arguiot/TextDiff";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzyzanowskim/STTextView";
@@ -977,6 +1001,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		68528F662865BE1400949359 /* TextDiff */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68528F652865BE1400949359 /* XCRemoteSwiftPackageReference "TextDiff" */;
+			productName = TextDiff;
+		};
 		6858DC51284D875F003A5269 /* STTextView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */;

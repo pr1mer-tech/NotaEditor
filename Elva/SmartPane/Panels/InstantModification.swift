@@ -16,6 +16,9 @@ struct InstantModification: View {
     var body: some View {
         List {
             SelectionWordsView(words: document.selecting?.numberOfWords ?? 0)
+                .onChange(of: document.selecting) { _ in
+                    editionController.modification = nil
+                }
             Section("Quick Actions") {
                 Group {
                     AsyncButton {
@@ -30,7 +33,8 @@ struct InstantModification: View {
             if let preview = editionController.modification {
                 Spacer()
                 Section("Preview") {
-                    Text(preview)
+                    TextChangePreview(oldText: document.selecting ?? "", newText: preview)
+                
                     Button {
                         document.selectionReplacement = preview
                     } label: {

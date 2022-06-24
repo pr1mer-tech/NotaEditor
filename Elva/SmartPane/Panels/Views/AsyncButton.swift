@@ -52,6 +52,7 @@ struct AsyncButton<Label: View>: View {
                     
                     if isPerformingTask {
                         ProgressView()
+                            .controlSize(.mini)
                     }
                 }
             }

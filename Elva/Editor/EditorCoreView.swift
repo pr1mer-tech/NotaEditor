@@ -19,6 +19,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
     class Coordinator: NSObject, EditorStorageDelegate {
         func selecting(text: String?) {
             self.parent.document.selecting = text
+            self.parent.document.selectionReplacement = nil // Making sure we invalidate any change when text selection changes.
         }
         
         func startedCompletionActivity(with request: CompletionRequest) {

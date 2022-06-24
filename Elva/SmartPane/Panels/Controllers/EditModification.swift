@@ -14,6 +14,8 @@ class EditionController: ObservableObject {
     func edit(text: String, with instruction: String) async throws {
         let request = EditRequest(input: text, instruction: instruction)
         let edit = try await CompletionProvider.shared.edit(for: request)
-        self.modification = edit.choices.first?.text
+        DispatchQueue.main.async {
+            self.modification = edit.choices.first?.text
+        }
     }
 }
