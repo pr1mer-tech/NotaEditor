@@ -138,7 +138,9 @@ public class Storage: NSTextStorage {
                 var range = match.range(at: 0)
                 if style.hiddenOffset != 0 {
                     // Hide the first character of the range.
-                    backingStore.addAttribute(.font, value: UniversalFont.systemFont(ofSize: 0.1), range: NSRange(location: range.location, length: style.hiddenOffset))
+                    let defaultFont = style.attributes[.font] as? UniversalFont ?? .systemFont(ofSize: 17)
+                    let smallerSize = defaultFont.pointSize * 0.8 // 20% smaller
+                    backingStore.addAttribute(.font, value: UniversalFont.systemFont(ofSize: smallerSize), range: NSRange(location: range.location, length: style.hiddenOffset))
                     range = NSRange(location: range.location + style.hiddenOffset, length: range.length - style.hiddenOffset)
                 }
                 

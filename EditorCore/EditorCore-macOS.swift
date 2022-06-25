@@ -24,5 +24,24 @@ public class EditorCore: STTextView {
         textContentStorage.textStorage?
             .replaceCharacters(in: gptRange, with: "") // Removing completion
     }
+    
+    override public func mouseEntered(with event: NSEvent) {
+        super.mouseEntered(with: event)
+        NSCursor.iBeam.set()
+    }
+    
+    private var trackingArea: NSTrackingArea?
+    
+    public override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        
+        if let trackingArea = self.trackingArea {
+            self.removeTrackingArea(trackingArea)
+        }
+        
+        let options: NSTrackingArea.Options = [.mouseEnteredAndExited, .activeAlways]
+        self.trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
+        self.addTrackingArea(self.trackingArea!)
+    }
 }
 #endif

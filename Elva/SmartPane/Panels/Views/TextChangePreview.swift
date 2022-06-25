@@ -11,12 +11,30 @@ struct TextChangePreview: View {
     var oldText: String
     var newText: String
     
+    @State var shouldPreview = true
+    @State var attributed = NSAttributedString()
+    
     var body: some View {
-        AttributedText(
-            text: newText.attributedDifference(from: oldText)
-        )
-        .frame(height: 75)
-        .cornerRadius(5)
+        ZStack(alignment: .topTrailing) {
+            AttributedText(
+                text: shouldPreview ? attributed : NSAttributedString(string: newText, attributes: [
+                    .font: NSFont.systemFont(ofSize: NSFont.systemFontSize),
+                    .foregroundColor: NSColor.labelColor
+                ])
+            )
+            .frame(height: 75)
+            .cornerRadius(5)
+            Button {
+                shouldPreview.toggle()
+            } label: {
+                Image(systemName: "square.filled.and.line.vertical.and.square")
+                    .foregroundColor(shouldPreview ? .accentColor : .gray)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+        }
+        .task {
+            (attributed, shouldPreview) = newText.attributedDifference(from: oldText)
+        }
     }
 }
 
