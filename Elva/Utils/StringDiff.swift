@@ -20,15 +20,24 @@ extension String {
                 attr.append(.init(string: string))
             case .insert(let string):
                 attr.append(.init(string: string, attributes: [
-                    .backgroundColor: NSColor.systemGreen.withAlphaComponent(0.5)
+                    .underlineStyle: NSUnderlineStyle.single.rawValue,
+                    .underlineColor: NSColor.systemGreen.withAlphaComponent(0.5)
                 ]))
             case .delete(let string):
                 attr.append(.init(string: string, attributes: [
-                    .backgroundColor: NSColor.systemRed.withAlphaComponent(0.5),
+                    .underlineColor: NSColor.systemRed.withAlphaComponent(0.5),
+                    .underlineStyle: NSUnderlineStyle.single.rawValue,
                     .strikethroughStyle: NSUnderlineStyle.single.rawValue
                 ]))
             }
         }
+        
+        // Set body style
+        attr.addAttributes([
+            .font: NSFont.systemFont(ofSize: NSFont.systemFontSize),
+            .foregroundColor: NSColor.labelColor
+        ], range: NSRange(location: 0, length: attr.length))
+        
         return attr
     }
 }

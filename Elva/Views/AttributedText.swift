@@ -64,12 +64,49 @@ final class CustomTextView: NSView {
         return scrollView
     }()
     
+    class LayoutManager: NSLayoutManager {
+        
+        override func drawUnderline(forGlyphRange glyphRange: NSRange,
+                                    underlineType underlineVal: NSUnderlineStyle,
+                                    baselineOffset: CGFloat,
+                                    lineFragmentRect lineRect: CGRect,
+                                    lineFragmentGlyphRange lineGlyphRange: NSRange,
+                                    containerOrigin: CGPoint
+        ) {
+            let firstPosition  = location(forGlyphAt: glyphRange.location).x
+            
+            let lastPosition: CGFloat
+            
+            if NSMaxRange(glyphRange) < NSMaxRange(lineGlyphRange) {
+                lastPosition = location(forGlyphAt: NSMaxRange(glyphRange)).x
+            } else {
+                lastPosition = lineFragmentUsedRect(
+                    forGlyphAt: NSMaxRange(glyphRange) - 1,
+                    effectiveRange: nil).size.width
+            }
+            
+            var lineRect = lineRect
+            let height = lineRect.size.height * 3.5 / 4.0 // replace your under line height
+            lineRect.origin.x += firstPosition
+            lineRect.size.width = lastPosition - firstPosition
+            lineRect.size.height = height
+            
+            lineRect.origin.x += containerOrigin.x
+            lineRect.origin.y += containerOrigin.y
+            
+            lineRect = lineRect.integral.insetBy(dx: -0.5, dy: -0.5)
+            
+            let path = NSBezierPath(roundedRect: lineRect, xRadius: 3, yRadius: 3)
+            // let path = UIBezierPath(roundedRect: lineRect, cornerRadius: 3)
+            // set your cornerRadius
+            path.fill()
+        }
+    }
+    
+    var layoutManager = LayoutManager()
+    var textStorage = NSTextStorage()
     private lazy var textView: NSTextView = {
         let contentSize = scrollView.contentSize
-        //
-        let textContentStorage = NSTextContentStorage()
-        let textLayoutManager = NSTextLayoutManager()
-        textContentStorage.addTextLayoutManager(textLayoutManager)
         //
         let textContainer = NSTextContainer(size: scrollView.frame.size)
         textContainer.widthTracksTextView = true
@@ -77,7 +114,8 @@ final class CustomTextView: NSView {
             width: contentSize.width,
             height: CGFloat.greatestFiniteMagnitude
         )
-        textLayoutManager.textContainer = textContainer
+        layoutManager.replaceTextStorage(textStorage)
+        textContainer.replaceLayoutManager(layoutManager)
         //
         let textView                     = NSTextView(frame: .zero, textContainer: textContainer)
         textView.autoresizingMask        = .width
