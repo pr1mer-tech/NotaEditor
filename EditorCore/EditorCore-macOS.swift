@@ -16,8 +16,13 @@ public class EditorCore: STTextView {
         }
     }
     
+    var networkTask: Task<(), Never>? = nil
+    
     public override func mouseDown(with event: NSEvent) {
         super.mouseDown(with: event)
+        
+        // Stop tasks
+        self.networkTask?.cancel()
         
         // Delete completion
         guard let gptRange = attributedString().GPTCompletionRange else { return }

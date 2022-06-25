@@ -50,6 +50,8 @@ public class EditorController: NSViewController, STTextViewDelegate {
     
     public func textView(_ textView: STTextView, didChangeTextIn affectedCharRange: NSTextRange, replacementString: String) {
         lastEdit = Date()
+        self.textView.networkTask?.cancel() // Making sure there is no duplicate request
+        
         guard (storage.delegate as? EditorStorageDelegate)?.shouldUpdateText ?? true else { return }
         
         let content = textView.attributedString()
@@ -61,10 +63,12 @@ public class EditorController: NSViewController, STTextViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if self.lastEdit.timeIntervalSinceNow < -1 {
                 // User has stopped typing
-                Task {
+                self.textView.networkTask = Task {
                     do {
                         try await self.completeSentence(textView, didChangeTextIn: affectedCharRange, replacementString: replacementString)
                     } catch {
+                        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStorageDelegate
+                        delegate?.finishedCompletionActivity(with: nil)
                         print(error)
                     }
                 }

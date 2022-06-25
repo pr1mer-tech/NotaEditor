@@ -26,7 +26,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
             self.parent.document.networkActivity = true
         }
         
-        func finishedCompletionActivity(with response: CompletionResponse) {
+        func finishedCompletionActivity(with response: CompletionResponse? = nil) {
             self.parent.document.networkActivity = false
         }
         

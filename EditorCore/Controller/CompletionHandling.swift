@@ -34,9 +34,15 @@ extension EditorController {
         
         let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStorageDelegate
         
+        // Pre-check
+        try Task.checkCancellation()
+        
         delegate?.startedCompletionActivity(with: request)
         
         let result = try await self.completion.completion(for: request)
+        
+        // After-check
+        try Task.checkCancellation()
         
         delegate?.finishedCompletionActivity(with: result)
         
