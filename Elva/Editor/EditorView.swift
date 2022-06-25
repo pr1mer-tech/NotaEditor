@@ -10,7 +10,12 @@ import SwiftUI
 struct EditorView: View {
     var body: some View {
         VStack(spacing: 0) {
-            EditorCoreView()
+            ZStack {
+                Color.white
+                EditorCoreView()
+                    .frame(maxWidth: 600)
+            }
+            
             EditorUtilView()
         }
     }
