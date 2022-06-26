@@ -25,7 +25,7 @@ public struct Theme {
     public var styles: [Style] = []
     
     public init(styles: [Style]) {
-        self.body = styles.first { $0.element == .body } ?? Style(element: .body, attributes: [.foregroundColor: UniversalColor.label])
+        self.body = styles.first { $0.element == .body } ?? Style(element: .body, attributes: [.foregroundColor: UniversalColor.textColor])
         self.styles = styles.filter { $0.element != .body }
     }
     
@@ -44,7 +44,6 @@ public struct Theme {
             ]),
             Style(element: .body, attributes: [
                 .font: UniversalFont.systemFont(ofSize: 17),
-                .foregroundColor: UniversalColor.labelColor,
             ]),
             Style(element: .bold, attributes: [
                 .font: UniversalFont.systemFont(ofSize: 17).with(traits: "bold"),

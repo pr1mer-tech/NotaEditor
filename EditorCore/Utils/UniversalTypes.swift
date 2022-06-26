@@ -23,5 +23,8 @@
         static var label: UniversalColor {
             labelColor
         }
+        var effectiveAppearance: UniversalColor {
+            return UniversalColor(cgColor: self.cgColor) ?? self
+        }
     }
 #endif

@@ -22,7 +22,7 @@ public class EditorController: NSViewController, STTextViewDelegate {
 
         textView.defaultParagraphStyle = paragraph
         textView.font = theme.body.attributes[.font] as? UniversalFont
-        textView.textColor = .textColor
+        textView.textColor = .blue
         textView.storage = storage
         textView.widthTracksTextView = true
         textView.highlightSelectedLine = true

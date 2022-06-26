@@ -124,9 +124,10 @@ public class Storage: NSTextStorage {
         let backingString = backingStore.string
         backingStore.enumerateAttributes(in: range) { attributes, range, _ in
             backingStore.setAttributes(theme.body.attributes, range: range)
+            backingStore.addAttribute(.foregroundColor, value: UniversalColor.textColor.effectiveAppearance, range: range)
             if attributes.keys.contains(.gptCompletion) {
                 backingStore.addAttributes([
-                    .foregroundColor: UniversalColor.lightGray,
+                    .foregroundColor: UniversalColor.lightGray.effectiveAppearance,
                     .gptCompletion: true
                 ], range: range)
             }
