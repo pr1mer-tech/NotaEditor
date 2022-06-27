@@ -32,7 +32,7 @@ extension EditorController {
         
         guard let request = CompletionRequest.buildRequest(for: sentences, stoppingAt: sentenceIndex) else { return }
         
-        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorStorageDelegate
+        let delegate = textView.textContentStorage.textStorage?.delegate as? EditorCoreDelegate
         
         // Pre-check
         try Task.checkCancellation()
@@ -41,15 +41,15 @@ extension EditorController {
         
         let result = try await self.completion.completion(for: request)
         
+        delegate?.finishedCompletionActivity(with: result)
+        
         // After-check
         try Task.checkCancellation()
-        
-        delegate?.finishedCompletionActivity(with: result)
         
         guard let choice = result.choices.first else { return }
         var completion = choice.text
         // If sentence and completion both ends and start with a space, remove it
-        if sentences[sentenceIndex].last == " " && completion.first == " " {
+        if sentences[sentenceIndex].trimmingCharacters(in: .newlines).last == " " && completion.first == " " {
             completion = String(completion.dropFirst())
         }
         let attributed = NSMutableAttributedString(string: completion, attributes: [

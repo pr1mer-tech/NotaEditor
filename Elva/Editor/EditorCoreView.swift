@@ -12,11 +12,14 @@ import GPT_Tokenizer
 struct EditorCoreView: NSViewControllerRepresentable {
     @EnvironmentObject var document: MarkdownDocument
     
+    @Preference(\.completionUsage) var tokenUsage
+    @Preference(\.completionLastReset) var lastReset
+    
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
     
-    class Coordinator: NSObject, EditorStorageDelegate {
+    class Coordinator: NSObject, EditorCoreDelegate {
         func selecting(text: String?) {
             self.parent.document.selecting = text
             self.parent.document.selectionReplacement = nil // Making sure we invalidate any change when text selection changes.
@@ -28,6 +31,13 @@ struct EditorCoreView: NSViewControllerRepresentable {
         
         func finishedCompletionActivity(with response: CompletionResponse? = nil) {
             self.parent.document.networkActivity = false
+            if let response = response {
+                // If last reset is older than 1 month, we reset the usage
+                if self.parent.lastReset.timeIntervalSinceNow < -30 * 24 * 60 * 60 {
+                    self.parent.tokenUsage = 0
+                }
+                self.parent.tokenUsage += UsageTokenMultiplicator.shared.usage(for: response.usage.total_tokens, using: response.model)
+            }
         }
         
         private var parent: EditorCoreView
@@ -35,9 +45,6 @@ struct EditorCoreView: NSViewControllerRepresentable {
         
         init(_ parent: EditorCoreView) {
             self.parent = parent
-        }
-        
-        func textStorage(_ textStorage: NSTextStorage, willProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {
         }
         
         func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions, range editedRange: NSRange, changeInLength delta: Int) {

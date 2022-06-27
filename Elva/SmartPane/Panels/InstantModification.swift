@@ -13,6 +13,9 @@ struct InstantModification: View {
     
     @StateObject var editionController = EditionController()
     
+    @Preference(\.completionUsage) var tokenUsage
+    @Preference(\.completionLastReset) var lastReset
+    
     var body: some View {
         List {
             SelectionWordsView(words: document.selecting?.numberOfWords ?? 0)
@@ -30,13 +33,18 @@ struct InstantModification: View {
                 }
                 .disabled(document.selecting?.numberOfWords ?? 0 < 5)
             }
-            if let preview = editionController.modification {
+            if let preview = editionController.modification, let newText = preview.choices.first?.text {
                 Spacer()
                 Section("Preview") {
-                    TextChangePreview(oldText: document.selecting ?? "", newText: preview)
+                    TextChangePreview(oldText: document.selecting ?? "", newText: newText)
                 
                     Button {
-                        document.selectionReplacement = preview
+                        document.selectionReplacement = newText
+                        // If last reset is older than 1 month, we reset the usage
+                        if self.lastReset.timeIntervalSinceNow < -30 * 24 * 60 * 60 {
+                            self.tokenUsage = 0
+                        }
+                        self.tokenUsage += UsageTokenMultiplicator.shared.usage(for: preview.usage.total_tokens, using: preview.model)
                     } label: {
                         Text("Validate")
                             .frame(maxWidth: .infinity)

@@ -54,10 +54,16 @@
 		68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E92D74285858B500B77770 /* RequestBuilder.swift */; };
 		68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */; };
 		68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA24C2857372400F7B587 /* EditorUtilView.swift */; };
-		68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */; };
+		68EFA2542857380900F7B587 /* EditorCoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorCoreDelegate.swift */; };
 		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
 		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
 		68F36A812869530400B0E8A0 /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68F36A802869530400B0E8A0 /* GPT-Tokenizer */; };
+		68F36A832869567B00B0E8A0 /* CompletionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A822869567B00B0E8A0 /* CompletionModels.swift */; };
+		68F36A892869598D00B0E8A0 /* PreferencesModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A882869598D00B0E8A0 /* PreferencesModifier.swift */; };
+		68F36A8E28696F7E00B0E8A0 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 68F36A8D28696F7E00B0E8A0 /* Preferences */; };
+		68F36A9028696FA000B0E8A0 /* PreferencesPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A8F28696FA000B0E8A0 /* PreferencesPane.swift */; };
+		68F36A932869700C00B0E8A0 /* PreferenceUsagePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */; };
+		68F36A96286979AB00B0E8A0 /* UsageTokenMultiplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */; };
 		68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0D9285987E100C59F8D /* EditorView.swift */; };
 		68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0DB28598A6300C59F8D /* SmartPane.swift */; };
 		68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */; };
@@ -149,9 +155,14 @@
 		68EFA24928572D4300F7B587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownDocument.swift; sourceTree = "<group>"; };
 		68EFA24C2857372400F7B587 /* EditorUtilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorUtilView.swift; sourceTree = "<group>"; };
-		68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorStorageDelegate.swift; sourceTree = "<group>"; };
+		68EFA2532857380900F7B587 /* EditorCoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCoreDelegate.swift; sourceTree = "<group>"; };
 		68EFA25628573D2200F7B587 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		68EFA259285741F200F7B587 /* WordCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCount.swift; sourceTree = "<group>"; };
+		68F36A822869567B00B0E8A0 /* CompletionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionModels.swift; sourceTree = "<group>"; };
+		68F36A882869598D00B0E8A0 /* PreferencesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModifier.swift; sourceTree = "<group>"; };
+		68F36A8F28696FA000B0E8A0 /* PreferencesPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPane.swift; sourceTree = "<group>"; };
+		68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceUsagePane.swift; sourceTree = "<group>"; };
+		68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageTokenMultiplicator.swift; sourceTree = "<group>"; };
 		68FDE0D9285987E100C59F8D /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		68FDE0DB28598A6300C59F8D /* SmartPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPane.swift; sourceTree = "<group>"; };
 		68FDE0E02859B0D500C59F8D /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68A6861528470C0900E792D4 /* EditorCore.framework in Frameworks */,
+				68F36A8E28696F7E00B0E8A0 /* Preferences in Frameworks */,
 				68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */,
 				68528F672865BE1400949359 /* TextDiff in Frameworks */,
 				6858DC52284D875F003A5269 /* STTextView in Frameworks */,
@@ -204,6 +216,7 @@
 				684CF38928508D85003D3272 /* CompletionProvider.swift */,
 				684CF38B2851CFF0003D3272 /* CompletionRequest.swift */,
 				68E92D74285858B500B77770 /* RequestBuilder.swift */,
+				68F36A822869567B00B0E8A0 /* CompletionModels.swift */,
 			);
 			path = "GPT-API";
 			sourceTree = "<group>";
@@ -357,6 +370,7 @@
 		68AB3781285DB02D00D4D28F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				68F36A872869598200B0E8A0 /* Preferences */,
 				683A68F7285DD8CA00EC1861 /* Toolbar */,
 				68AB3786285DB1AA00D4D28F /* Main.storyboard */,
 				68EFA24A28572DFB00F7B587 /* MarkdownDocument.swift */,
@@ -378,7 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				68A6864B28470F4400E792D4 /* EditorController.swift */,
-				68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */,
+				68EFA2532857380900F7B587 /* EditorCoreDelegate.swift */,
 				68E92D722858300A00B77770 /* CompletionHandling.swift */,
 			);
 			path = Controller;
@@ -402,6 +416,33 @@
 				68528F5F286585AC00949359 /* StringDiff.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		68F36A872869598200B0E8A0 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				68F36A9128696FF400B0E8A0 /* Panes */,
+				68F36A882869598D00B0E8A0 /* PreferencesModifier.swift */,
+				68F36A8F28696FA000B0E8A0 /* PreferencesPane.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		68F36A9128696FF400B0E8A0 /* Panes */ = {
+			isa = PBXGroup;
+			children = (
+				68F36A942869798F00B0E8A0 /* Usage */,
+			);
+			path = Panes;
+			sourceTree = "<group>";
+		};
+		68F36A942869798F00B0E8A0 /* Usage */ = {
+			isa = PBXGroup;
+			children = (
+				68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */,
+				68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */,
+			);
+			path = Usage;
 			sourceTree = "<group>";
 		};
 		68FDE0D82859879900C59F8D /* SmartPane */ = {
@@ -448,6 +489,7 @@
 				6858DC51284D875F003A5269 /* STTextView */,
 				68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */,
 				68528F662865BE1400949359 /* TextDiff */,
+				68F36A8D28696F7E00B0E8A0 /* Preferences */,
 			);
 			productName = Elva;
 			productReference = 68A685E928470BD800E792D4 /* Elva.app */;
@@ -530,6 +572,7 @@
 				6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */,
 				68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */,
 				68528F652865BE1400949359 /* XCRemoteSwiftPackageReference "TextDiff" */,
+				68F36A8C28696F7E00B0E8A0 /* XCRemoteSwiftPackageReference "Preferences" */,
 			);
 			productRefGroup = 68A685EA28470BD800E792D4 /* Products */;
 			projectDirPath = "";
@@ -574,13 +617,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F36A96286979AB00B0E8A0 /* UsageTokenMultiplicator.swift in Sources */,
+				68F36A932869700C00B0E8A0 /* PreferenceUsagePane.swift in Sources */,
 				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68528F592864114500949359 /* RephraseButton.swift in Sources */,
+				68F36A9028696FA000B0E8A0 /* PreferencesPane.swift in Sources */,
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
 				683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
 				683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */,
 				68528F5E28647ACA00949359 /* AsyncButton.swift in Sources */,
+				68F36A892869598D00B0E8A0 /* PreferencesModifier.swift in Sources */,
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
@@ -616,13 +663,14 @@
 				68D5EEB42856EB04005372BD /* Subscript.swift in Sources */,
 				68A6860428470C0800E792D4 /* EditorCore.docc in Sources */,
 				68A6863628470CC600E792D4 /* EditorCore-iOS.swift in Sources */,
-				68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */,
+				68EFA2542857380900F7B587 /* EditorCoreDelegate.swift in Sources */,
 				68A6864728470CC600E792D4 /* UniversalTypes.swift in Sources */,
 				68E92D732858300A00B77770 /* CompletionHandling.swift in Sources */,
 				68D5EEB22856D966005372BD /* AttributedStringKeys.swift in Sources */,
 				68E92D75285858B500B77770 /* RequestBuilder.swift in Sources */,
 				684CF3912851E703003D3272 /* Sentences.swift in Sources */,
 				684CF38F2851E05D003D3272 /* TextRange.swift in Sources */,
+				68F36A832869567B00B0E8A0 /* CompletionModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,6 +1041,14 @@
 				minimumVersion = 0.0.9;
 			};
 		};
+		68F36A8C28696F7E00B0E8A0 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/arguiot/GPT-Tokenizer";
@@ -1023,6 +1079,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */;
 			productName = "GPT-Tokenizer";
+		};
+		68F36A8D28696F7E00B0E8A0 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68F36A8C28696F7E00B0E8A0 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
 		};
 		68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */ = {
 			isa = XCSwiftPackageProductDependency;
