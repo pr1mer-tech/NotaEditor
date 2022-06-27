@@ -48,5 +48,9 @@ public class EditorCore: STTextView {
         self.trackingArea = NSTrackingArea(rect: self.bounds, options: options, owner: self, userInfo: nil)
         self.addTrackingArea(self.trackingArea!)
     }
+    
+    public override func viewDidChangeEffectiveAppearance() {
+        
+    }
 }
 #endif

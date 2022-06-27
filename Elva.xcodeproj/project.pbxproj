@@ -57,6 +57,7 @@
 		68EFA2542857380900F7B587 /* EditorStorageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA2532857380900F7B587 /* EditorStorageDelegate.swift */; };
 		68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA25628573D2200F7B587 /* ProgressView.swift */; };
 		68EFA25A285741F200F7B587 /* WordCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EFA259285741F200F7B587 /* WordCount.swift */; };
+		68F36A812869530400B0E8A0 /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68F36A802869530400B0E8A0 /* GPT-Tokenizer */; };
 		68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0D9285987E100C59F8D /* EditorView.swift */; };
 		68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0DB28598A6300C59F8D /* SmartPane.swift */; };
 		68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */; };
@@ -172,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F36A812869530400B0E8A0 /* GPT-Tokenizer in Frameworks */,
 				6858DC54284D8786003A5269 /* STTextView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +469,7 @@
 			name = EditorCore;
 			packageProductDependencies = (
 				6858DC53284D8786003A5269 /* STTextView */,
+				68F36A802869530400B0E8A0 /* GPT-Tokenizer */,
 			);
 			productName = EditorCore;
 			productReference = 68A6860028470C0800E792D4 /* EditorCore.framework */;
@@ -1015,6 +1018,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6858DC50284D875F003A5269 /* XCRemoteSwiftPackageReference "STTextView" */;
 			productName = STTextView;
+		};
+		68F36A802869530400B0E8A0 /* GPT-Tokenizer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68FDE0DD2859A9DA00C59F8D /* XCRemoteSwiftPackageReference "GPT-Tokenizer" */;
+			productName = "GPT-Tokenizer";
 		};
 		68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */ = {
 			isa = XCSwiftPackageProductDependency;
