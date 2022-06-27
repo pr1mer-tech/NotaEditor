@@ -25,7 +25,7 @@ final class Preferences {
     var completionUsage = 0
     
     @UserDefault("completion_usage_last_reset")
-    var completionLastReset = Date()
+    var completionLastReset = Date.distantPast
 }
 
 // MARK: Helpers

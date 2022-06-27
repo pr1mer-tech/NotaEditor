@@ -43,8 +43,9 @@ struct InstantModification: View {
                         // If last reset is older than 1 month, we reset the usage
                         if self.lastReset.timeIntervalSinceNow < -30 * 24 * 60 * 60 {
                             self.tokenUsage = 0
+                            self.lastReset = .now
                         }
-                        self.tokenUsage += UsageTokenMultiplicator.shared.usage(for: preview.usage.total_tokens, using: preview.model)
+                        self.tokenUsage += TokenLimiter.shared.usage(for: preview.usage.total_tokens, using: preview.model)
                     } label: {
                         Text("Validate")
                             .frame(maxWidth: .infinity)

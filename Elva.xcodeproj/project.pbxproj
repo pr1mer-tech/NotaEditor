@@ -63,7 +63,7 @@
 		68F36A8E28696F7E00B0E8A0 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = 68F36A8D28696F7E00B0E8A0 /* Preferences */; };
 		68F36A9028696FA000B0E8A0 /* PreferencesPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A8F28696FA000B0E8A0 /* PreferencesPane.swift */; };
 		68F36A932869700C00B0E8A0 /* PreferenceUsagePane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */; };
-		68F36A96286979AB00B0E8A0 /* UsageTokenMultiplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */; };
+		68F36A96286979AB00B0E8A0 /* TokenLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F36A95286979AB00B0E8A0 /* TokenLimiter.swift */; };
 		68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0D9285987E100C59F8D /* EditorView.swift */; };
 		68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FDE0DB28598A6300C59F8D /* SmartPane.swift */; };
 		68FDE0DF2859A9DA00C59F8D /* GPT-Tokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = 68FDE0DE2859A9DA00C59F8D /* GPT-Tokenizer */; };
@@ -162,7 +162,7 @@
 		68F36A882869598D00B0E8A0 /* PreferencesModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModifier.swift; sourceTree = "<group>"; };
 		68F36A8F28696FA000B0E8A0 /* PreferencesPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesPane.swift; sourceTree = "<group>"; };
 		68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceUsagePane.swift; sourceTree = "<group>"; };
-		68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageTokenMultiplicator.swift; sourceTree = "<group>"; };
+		68F36A95286979AB00B0E8A0 /* TokenLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenLimiter.swift; sourceTree = "<group>"; };
 		68FDE0D9285987E100C59F8D /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		68FDE0DB28598A6300C59F8D /* SmartPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPane.swift; sourceTree = "<group>"; };
 		68FDE0E02859B0D500C59F8D /* InfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRow.swift; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				68F36A922869700C00B0E8A0 /* PreferenceUsagePane.swift */,
-				68F36A95286979AB00B0E8A0 /* UsageTokenMultiplicator.swift */,
+				68F36A95286979AB00B0E8A0 /* TokenLimiter.swift */,
 			);
 			path = Usage;
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F36A96286979AB00B0E8A0 /* UsageTokenMultiplicator.swift in Sources */,
+				68F36A96286979AB00B0E8A0 /* TokenLimiter.swift in Sources */,
 				68F36A932869700C00B0E8A0 /* PreferenceUsagePane.swift in Sources */,
 				68FDE0DA285987E100C59F8D /* EditorView.swift in Sources */,
 				68528F592864114500949359 /* RephraseButton.swift in Sources */,

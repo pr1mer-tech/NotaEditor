@@ -35,8 +35,9 @@ struct EditorCoreView: NSViewControllerRepresentable {
                 // If last reset is older than 1 month, we reset the usage
                 if self.parent.lastReset.timeIntervalSinceNow < -30 * 24 * 60 * 60 {
                     self.parent.tokenUsage = 0
+                    self.parent.lastReset = .now
                 }
-                self.parent.tokenUsage += UsageTokenMultiplicator.shared.usage(for: response.usage.total_tokens, using: response.model)
+                self.parent.tokenUsage += TokenLimiter.shared.usage(for: response.usage.total_tokens, using: response.model)
             }
         }
         

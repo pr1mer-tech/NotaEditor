@@ -12,7 +12,7 @@ struct InfoRow<T>: View where T: CustomStringConvertible {
     var value: T
     var body: some View {
         HStack {
-            Text(label)
+            Text(label) +
             Text(":")
             Spacer()
             Text("\(String(describing: value))")
