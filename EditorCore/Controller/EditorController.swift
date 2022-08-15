@@ -76,26 +76,26 @@ public class EditorController: NSViewController, STTextViewDelegate {
         }
     }
     
-    public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {
-            
-            let decorationView = STAnnotationLabelView(
-                annotation: lineAnnotation,
-                label: { Label("Hello World", systemImage: "cross") }
-            )
-
-            // Position
-            
-            let segmentFrame = textView.textLayoutManager.textSelectionSegmentFrame(at: lineAnnotation.location, type: .standard)!
-            let annotationHeight = min(textLineFragment.typographicBounds.height, textView.font?.boundingRectForFont.height ?? 24)
-
-            decorationView.frame = CGRect(
-                x: segmentFrame.origin.x,
-                y: segmentFrame.origin.y + (segmentFrame.height - annotationHeight),
-                width: textView.bounds.width - segmentFrame.maxX,
-                height: annotationHeight
-            )
-            return decorationView
-    }
+//    public func textView(_ textView: STTextView, viewForLineAnnotation lineAnnotation: STLineAnnotation, textLineFragment: NSTextLineFragment) -> NSView? {
+//            
+//            let decorationView = STAnnotationLabelView(
+//                annotation: lineAnnotation,
+//                label: { Label("Hello World", systemImage: "cross") }
+//            )
+//
+//            // Position
+//            
+//            let segmentFrame = textView.textLayoutManager.textSelectionSegmentFrame(at: lineAnnotation.location, type: .standard)!
+//            let annotationHeight = min(textLineFragment.typographicBounds.height, textView.font?.boundingRectForFont.height ?? 24)
+//
+//            decorationView.frame = CGRect(
+//                x: segmentFrame.origin.x,
+//                y: segmentFrame.origin.y + (segmentFrame.height - annotationHeight),
+//                width: textView.bounds.width - segmentFrame.maxX,
+//                height: annotationHeight
+//            )
+//            return decorationView
+//    }
     
     public func textViewDidChangeSelection(_ notification: Notification) {
         let selected = textView.selectedRange()

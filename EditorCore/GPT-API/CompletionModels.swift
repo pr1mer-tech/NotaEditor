@@ -48,7 +48,7 @@ public struct EditRequest: Codable {
 
 public struct Usage: Codable {
     var prompt_tokens: Int
-    var completion_tokens: Int
+    var completion_tokens: Int?
     public var total_tokens: Int
 }
 
@@ -68,7 +68,7 @@ public struct CompletionResponse: Codable {
 }
 
 public struct EditResponse: Codable {
-    public var model = GPTModel.davinciEdit
+    public var model: GPTModel = GPTModel.davinciEdit
     var object = "edit"
     
     public struct Choice: Codable {
@@ -78,4 +78,8 @@ public struct EditResponse: Codable {
     public var choices: [Choice]
     
     public var usage: Usage
+    
+    enum CodingKeys: String, CodingKey {
+        case object, choices, usage
+    }
 }
