@@ -28,6 +28,15 @@
 		68669F362862F58500853944 /* SmartPaneMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68669F352862F58500853944 /* SmartPaneMenu.swift */; };
 		68669F3B2863247300853944 /* InstantModification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68669F3A2863247300853944 /* InstantModification.swift */; };
 		686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */; };
+		68857E2328BD0EEF00A6ACE0 /* EditorPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2228BD0EEF00A6ACE0 /* EditorPane.swift */; };
+		68857E2628BD145700A6ACE0 /* CommandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2528BD145700A6ACE0 /* CommandPalette.swift */; };
+		68857E2D28BD166200A6ACE0 /* OpenQuicklyOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2728BD166200A6ACE0 /* OpenQuicklyOptions.swift */; };
+		68857E2E28BD166200A6ACE0 /* OpenQuicklyTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2828BD166200A6ACE0 /* OpenQuicklyTableRowView.swift */; };
+		68857E2F28BD166200A6ACE0 /* OpenQuicklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2928BD166200A6ACE0 /* OpenQuicklyViewController.swift */; };
+		68857E3028BD166200A6ACE0 /* OpenQuicklyWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2A28BD166200A6ACE0 /* OpenQuicklyWindowController.swift */; };
+		68857E3128BD166200A6ACE0 /* OpenQuicklyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2B28BD166200A6ACE0 /* OpenQuicklyWindow.swift */; };
+		68857E3228BD166200A6ACE0 /* OpenQuicklyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E2C28BD166200A6ACE0 /* OpenQuicklyDelegate.swift */; };
+		68857E3528BD186200A6ACE0 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68857E3428BD186200A6ACE0 /* Actions.swift */; };
 		68A685F128470BDA00E792D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F028470BDA00E792D4 /* Assets.xcassets */; };
 		68A685F428470BDA00E792D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A685F328470BDA00E792D4 /* Preview Assets.xcassets */; };
 		68A6860428470C0800E792D4 /* EditorCore.docc in Sources */ = {isa = PBXBuildFile; fileRef = 68A6860328470C0800E792D4 /* EditorCore.docc */; };
@@ -126,6 +135,15 @@
 		68669F352862F58500853944 /* SmartPaneMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPaneMenu.swift; sourceTree = "<group>"; };
 		68669F3A2863247300853944 /* InstantModification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantModification.swift; sourceTree = "<group>"; };
 		686CD9D0285ADACF0075A4A6 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
+		68857E2228BD0EEF00A6ACE0 /* EditorPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPane.swift; sourceTree = "<group>"; };
+		68857E2528BD145700A6ACE0 /* CommandPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandPalette.swift; sourceTree = "<group>"; };
+		68857E2728BD166200A6ACE0 /* OpenQuicklyOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyOptions.swift; sourceTree = "<group>"; };
+		68857E2828BD166200A6ACE0 /* OpenQuicklyTableRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyTableRowView.swift; sourceTree = "<group>"; };
+		68857E2928BD166200A6ACE0 /* OpenQuicklyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyViewController.swift; sourceTree = "<group>"; };
+		68857E2A28BD166200A6ACE0 /* OpenQuicklyWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyWindowController.swift; sourceTree = "<group>"; };
+		68857E2B28BD166200A6ACE0 /* OpenQuicklyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyWindow.swift; sourceTree = "<group>"; };
+		68857E2C28BD166200A6ACE0 /* OpenQuicklyDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenQuicklyDelegate.swift; sourceTree = "<group>"; };
+		68857E3428BD186200A6ACE0 /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		68A685E928470BD800E792D4 /* Elva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A685F028470BDA00E792D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68A685F328470BDA00E792D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -277,6 +295,37 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		68857E2128BD0ECF00A6ACE0 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				68857E2228BD0EEF00A6ACE0 /* EditorPane.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		68857E2428BD144500A6ACE0 /* Comand Palette */ = {
+			isa = PBXGroup;
+			children = (
+				68857E3328BD166500A6ACE0 /* OpenQuickly */,
+				68857E2528BD145700A6ACE0 /* CommandPalette.swift */,
+				68857E3428BD186200A6ACE0 /* Actions.swift */,
+			);
+			path = "Comand Palette";
+			sourceTree = "<group>";
+		};
+		68857E3328BD166500A6ACE0 /* OpenQuickly */ = {
+			isa = PBXGroup;
+			children = (
+				68857E2C28BD166200A6ACE0 /* OpenQuicklyDelegate.swift */,
+				68857E2728BD166200A6ACE0 /* OpenQuicklyOptions.swift */,
+				68857E2828BD166200A6ACE0 /* OpenQuicklyTableRowView.swift */,
+				68857E2928BD166200A6ACE0 /* OpenQuicklyViewController.swift */,
+				68857E2B28BD166200A6ACE0 /* OpenQuicklyWindow.swift */,
+				68857E2A28BD166200A6ACE0 /* OpenQuicklyWindowController.swift */,
+			);
+			path = OpenQuickly;
+			sourceTree = "<group>";
+		};
 		68A685E028470BD800E792D4 = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +419,7 @@
 		68AB3781285DB02D00D4D28F /* App */ = {
 			isa = PBXGroup;
 			children = (
+				68857E2428BD144500A6ACE0 /* Comand Palette */,
 				68F36A872869598200B0E8A0 /* Preferences */,
 				683A68F7285DD8CA00EC1861 /* Toolbar */,
 				68AB3786285DB1AA00D4D28F /* Main.storyboard */,
@@ -431,6 +481,7 @@
 		68F36A9128696FF400B0E8A0 /* Panes */ = {
 			isa = PBXGroup;
 			children = (
+				68857E2128BD0ECF00A6ACE0 /* Editor */,
 				68F36A942869798F00B0E8A0 /* Usage */,
 			);
 			path = Panes;
@@ -625,23 +676,32 @@
 				68EFA24D2857372400F7B587 /* EditorUtilView.swift in Sources */,
 				683A68F9285DD8DC00EC1861 /* ToolbarDelegate.swift in Sources */,
 				684101C7285C6E7F006AAFB8 /* MasterInspectorLayoutView.swift in Sources */,
+				68857E3228BD166200A6ACE0 /* OpenQuicklyDelegate.swift in Sources */,
 				683A68F6285DD5D500EC1861 /* WindowController.swift in Sources */,
 				68528F5E28647ACA00949359 /* AsyncButton.swift in Sources */,
 				68F36A892869598D00B0E8A0 /* PreferencesModifier.swift in Sources */,
 				68AB377E285DA2D200D4D28F /* AppDelegate.swift in Sources */,
 				68FDE0DC28598A6300C59F8D /* SmartPane.swift in Sources */,
+				68857E3028BD166200A6ACE0 /* OpenQuicklyWindowController.swift in Sources */,
+				68857E2F28BD166200A6ACE0 /* OpenQuicklyViewController.swift in Sources */,
 				68A6864A28470F1B00E792D4 /* EditorCoreView.swift in Sources */,
 				68669F362862F58500853944 /* SmartPaneMenu.swift in Sources */,
 				683A68FB285DD8F500EC1861 /* ToolbarIdentifier.swift in Sources */,
 				686CD9D1285ADACF0075A4A6 /* VisualEffect.swift in Sources */,
+				68857E2D28BD166200A6ACE0 /* OpenQuicklyOptions.swift in Sources */,
+				68857E3128BD166200A6ACE0 /* OpenQuicklyWindow.swift in Sources */,
 				68528F5C2864765B00949359 /* EditModification.swift in Sources */,
+				68857E2328BD0EEF00A6ACE0 /* EditorPane.swift in Sources */,
 				68B4BA85286331A800E76DA7 /* SelectionWordsView.swift in Sources */,
 				68528F622865867800949359 /* TextChangePreview.swift in Sources */,
 				68669F3B2863247300853944 /* InstantModification.swift in Sources */,
 				68528F60286585AC00949359 /* StringDiff.swift in Sources */,
 				68EFA25728573D2200F7B587 /* ProgressView.swift in Sources */,
+				68857E2E28BD166200A6ACE0 /* OpenQuicklyTableRowView.swift in Sources */,
 				68FDE0E12859B0D500C59F8D /* InfoRow.swift in Sources */,
 				68528F6428658BBD00949359 /* AttributedText.swift in Sources */,
+				68857E2628BD145700A6ACE0 /* CommandPalette.swift in Sources */,
+				68857E3528BD186200A6ACE0 /* Actions.swift in Sources */,
 				68EFA24B28572DFB00F7B587 /* MarkdownDocument.swift in Sources */,
 				68EFA25A285741F200F7B587 /* WordCount.swift in Sources */,
 			);

@@ -9,4 +9,5 @@ import Preferences
 
 extension Settings.PaneIdentifier {
     static let usage = Self("usage")
+    static let editor = Self("editor")
 }

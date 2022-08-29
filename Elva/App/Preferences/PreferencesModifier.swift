@@ -26,6 +26,10 @@ final class Preferences {
     
     @UserDefault("completion_usage_last_reset")
     var completionLastReset = Date.distantPast
+    
+    // MARK: Editor
+    @UserDefault("highlight_current_line")
+    var highlight_line = true
 }
 
 // MARK: Helpers

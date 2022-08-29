@@ -22,6 +22,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         return .terminateNow
     }
     
+    private lazy var commandPaletteController = CommandPaletteController()
+    
+    @IBAction
+    func commandPaletteActionHandler(_ sender: NSMenuItem) {
+        commandPaletteController.toggle()
+    }
+    
     @IBAction
     func settingsMenuItemActionHandler(_ sender: NSMenuItem) {
         settingsWindowController.show()
@@ -35,6 +42,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         ) {
             PreferenceUsagePane()
         },
+        Settings.Pane(
+            identifier: .editor,
+            title: "Editor",
+            toolbarIcon: NSImage(systemSymbolName: "character.cursor.ibeam", accessibilityDescription: "Text Editor Settings")!
+        ) {
+            EditorPane()
+        }
     ], style: .toolbarItems, animated: true, hidesToolbarForSingleItem: false)
 }
 

@@ -14,6 +14,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
     
     @Preference(\.completionUsage) var tokenUsage
     @Preference(\.completionLastReset) var lastReset
+    @Preference(\.highlight_line) var highlightLine
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
@@ -80,5 +81,7 @@ struct EditorCoreView: NSViewControllerRepresentable {
             nsViewController.replaceSelectedContent(with: document.selectionReplacement!)
             document.selectionReplacement = nil // Replacment once
         }
+        
+        nsViewController.textView.highlightSelectedLine = highlightLine
     }
 }
