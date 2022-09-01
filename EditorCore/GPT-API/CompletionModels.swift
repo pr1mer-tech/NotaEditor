@@ -27,8 +27,28 @@ public struct CompletionRequest: Codable {
     var top_p: Double = 1
     var presence_penalty: Double = 0
     var frequency_penalty: Double = 0
-    var stop = [".", "\n"]
+    var stop: [String]? = [".", "\n"]
     var user: String
+    
+    public enum StopSequence {
+        case singleLine
+        case none
+    }
+    
+    public init(instruction: String, user: String, model: GPTModel = .babbage, max_tokens: Int = 64, stop: StopSequence = .singleLine) {
+        self.prompt = instruction
+        self.user = user
+        self.model = model
+        self.max_tokens = max_tokens
+        switch stop {
+        case .singleLine:
+            self.stop = [".", "\n"]
+            break
+        case .none:
+            self.stop = nil
+            break
+        }
+    }
 }
 
 public struct EditRequest: Codable {

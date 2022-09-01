@@ -11,7 +11,7 @@ import Foundation
 extension CompletionProvider {
     // MARK: - Completion Request
     
-    func completion(for request: CompletionRequest) async throws -> CompletionResponse {
+    public func completion(for request: CompletionRequest) async throws -> CompletionResponse {
         let response = try await fetch(for: CompletionResponse.self, at: "completions", with: request, using: "POST")
         return response
     }

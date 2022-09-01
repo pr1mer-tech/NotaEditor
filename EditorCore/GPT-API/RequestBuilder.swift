@@ -39,7 +39,7 @@ extension CompletionRequest {
 
         // Build request
         let deviceID = CompletionProvider.hardwareUUID() ?? "unknown"
-        let request = CompletionRequest(prompt: prompt, user: deviceID)
+        let request = CompletionRequest(instruction: prompt, user: deviceID, model: .babbage, max_tokens: 64)
         return request
     }
 }

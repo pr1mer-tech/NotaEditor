@@ -19,4 +19,14 @@ class EditionController: ObservableObject {
             self.modification = edit
         }
     }
+    
+    func write(using instruction: String, max_tokens: Int, stop: CompletionRequest.StopSequence) async throws -> CompletionResponse {
+        let deviceID = CompletionProvider.hardwareUUID() ?? "unknown"
+        let prompt = "\(instruction)\n"
+        let request = CompletionRequest(instruction: prompt, user: deviceID, model: .curie, max_tokens: max_tokens, stop: stop)
+        
+        let completion = try await CompletionProvider.shared.completion(for: request)
+        
+        return completion
+    }
 }

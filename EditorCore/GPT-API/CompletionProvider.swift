@@ -55,7 +55,7 @@ public class CompletionProvider {
     }
     
     // MARK: - Security
-    static func hardwareUUID() -> String? {
+    static public func hardwareUUID() -> String? {
         let matchingDict = IOServiceMatching("IOPlatformExpertDevice")
         let platformExpert = IOServiceGetMatchingService(kIOMainPortDefault, matchingDict)
         defer{ IOObjectRelease(platformExpert) }

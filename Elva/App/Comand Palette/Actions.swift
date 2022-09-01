@@ -11,5 +11,5 @@ struct QuickAction {
     var name: String
     var subtitle: String
     var image: String // SF Symbols
-    var action: () -> Void
+    var action: () async -> Void
 }

@@ -25,8 +25,20 @@ struct PreferenceUsagePane: View {
                         Text("Expected to reach the limit in ") +
                         Text(expectedLimit, style: .offset)
                     }
+                    .italic()
                     .preferenceDescription()
+                    Text("") // Padding
+                        .preferenceDescription()
                 }
+                Text("You can think of tokens as pieces of words, where 1,000 tokens is about 750 words. This paragraph is 26 tokens.")
+                    .preferenceDescription()
+                Text("") // Padding
+                    .preferenceDescription()
+                Group {
+                    Text("You have ") + Text(String(tokenLimiter.usableTokens - tokenUsage)) + Text(" tokens left.")
+                }
+                .preferenceDescription()
+                
             }
         }
         

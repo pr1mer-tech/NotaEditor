@@ -78,6 +78,8 @@ class CommandPaletteController: NSViewController, OpenQuicklyDelegate {
         })
     ]
     
+    @Preference(\.completionUsage) var tokenUsage
+    
     func valueWasEntered(_ value: String) -> [Any] {
         var matches = actions.filter {
             $0.name.lowercased().contains(value.lowercased())
@@ -86,6 +88,21 @@ class CommandPaletteController: NSViewController, OpenQuicklyDelegate {
         if value.numberOfWords >= 4 {
             matches.append(QuickAction(name: value, subtitle: "Let the AI write for you, using this prompt", image: "brain", action: {
                 // Do nothing
+                
+                guard let document = NSDocumentController.shared.currentDocument as? MarkdownDocument else { return }
+                
+                let editionController = EditionController()
+                document.networkActivity = true
+
+                do {
+                    let response = try await editionController.write(using: value, max_tokens: 256, stop: .none)
+                    self.tokenUsage += TokenLimiter.shared.usage(for: response.usage.total_tokens, using: response.model)
+                    document.selectionReplacement = response.choices.first?.text ?? ""
+                } catch {
+                    print(error)
+                }
+                
+                document.networkActivity = false
             }))
         }
         
@@ -94,7 +111,9 @@ class CommandPaletteController: NSViewController, OpenQuicklyDelegate {
     
     func itemWasSelected(selected item: Any) {
         guard let action = item as? QuickAction else { return }
-        action.action()
+        Task {
+            await action.action()
+        }
         print("\(action.name) was selected")
     }
     
