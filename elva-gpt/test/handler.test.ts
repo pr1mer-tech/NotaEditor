@@ -1,4 +1,4 @@
-import { handleRequest } from '../src/handler'
+import { handle } from '../src/router'
 import makeServiceWorkerEnv from 'service-worker-mock'
 
 declare var global: any
@@ -10,7 +10,13 @@ describe('handle', () => {
   })
 
   test('handle GET', async () => {
-    const result = await handleRequest(new Request('/', { method: 'GET' }))
+    const request = new Request('/', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${btoa("Elva")}`
+      }
+    })
+    const result = await handle(request)
     expect(result.status).toEqual(200)
     const text = await result.text()
     expect(text).toEqual('request method: GET')

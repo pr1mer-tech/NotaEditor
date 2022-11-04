@@ -22,10 +22,9 @@ struct PreferenceUsagePane: View {
                                   usableTokens: tokenLimiter.usableTokens)
                 if let expectedLimit = tokenLimiter.expectedLimitReach(lastReset: lastReset, currentUsage: tokenUsage) {
                     Group {
-                        Text("Expected to reach the limit in ") +
-                        Text(expectedLimit, style: .offset)
+                        Text("Expected to reach the limit in ").italic() +
+                        Text(expectedLimit, style: .offset).italic()
                     }
-                    .italic()
                     .preferenceDescription()
                     Text("") // Padding
                         .preferenceDescription()
