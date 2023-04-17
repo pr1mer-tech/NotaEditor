@@ -1,0 +1,11 @@
+name = "Nota-gpt"
+main = "dist/worker.js"
+account_id = "a624ed85a043247437e29ed5ee8b9a3c"
+
+workers_dev = true
+compatibility_date = "2022-06-02"
+[build]
+command = "yarn && yarn build"
+
+# [secrets]
+# OPENAI_TOKEN

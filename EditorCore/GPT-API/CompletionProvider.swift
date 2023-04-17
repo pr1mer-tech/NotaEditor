@@ -10,7 +10,7 @@ import Foundation
 public class CompletionProvider {
     public static let shared = CompletionProvider()
     
-    let baseURL = "https://elva-gpt.pr1mer.tech"
+    let baseURL = "https://Nota-gpt.pr1mer.tech"
     
     // MARK: - Make a request
     func fetch<T, E>(for decodingType: T.Type, at path: String, with body: E? = nil, using method: String = "GET") async throws -> T where T: Decodable, E: Encodable {
